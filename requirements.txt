@@ -1,0 +1,9 @@
+panda
+numpy
+scikit-learn
+matplotlib
+seaborn
+ipykernel
+kagglehub
+tensorflow
+python-dotenv

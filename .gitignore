@@ -176,3 +176,7 @@ cython_debug/
 # Project Specific
 logs/
 artifacts/
+.DS_Store
+catboost_info/
+CNN_Project/data/
+Data/

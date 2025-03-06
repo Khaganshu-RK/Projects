@@ -1,0 +1,1676 @@
+columns:
+  mfg_year: int64
+  make: object
+  model: object
+  trim: object
+  body: object
+  transmission: object
+  state: object
+  condition: float64
+  odometer: float64
+  color: object
+  interior: object
+  mmr: float64
+  sellingprice: float64
+  sale_year: int64
+numerical:
+  mfg_year:
+    min: 1991
+    max: 2015
+    type: int
+  condition:
+    min: 0.1
+    max: 4.9
+    type: float
+  odometer:
+    min: 1.0
+    max: 999999.0
+    type: float
+  mmr:
+    min: 25.0
+    max: 166000.0
+    type: float
+  sellingprice:
+    min: 1.0
+    max: 167000.0
+    type: float
+  sale_year:
+    min: 2014
+    max: 2015
+    type: int
+categorical:
+  make:
+  - BMW
+  - VOLVO
+  - AUDI
+  - KIA
+  - CHEVROLET
+  - ACURA
+  - HYUNDAI
+  - INFINITI
+  - NISSAN
+  - MERCEDES-BENZ
+  - LAND ROVER
+  - VOLKSWAGEN
+  - FORD
+  - HONDA
+  - JAGUAR
+  - MINI
+  - JEEP
+  - LINCOLN
+  - LEXUS
+  - PORSCHE
+  - TOYOTA
+  - DODGE
+  - CHRYSLER
+  - MAZDA
+  - RAM
+  - CADILLAC
+  - SUBARU
+  - GMC
+  - PONTIAC
+  - SATURN
+  - SUZUKI
+  - SCION
+  - BUICK
+  - MERCURY
+  - HUMMER
+  - SAAB
+  - MITSUBISHI
+  - OLDSMOBILE
+  - SMART
+  - ISUZU
+  - FIAT
+  - MERCEDES
+  - ASTON MARTIN
+  - PLYMOUTH
+  - MASERATI
+  - LAMBORGHINI
+  - ROLLS-ROYCE
+  model:
+  - 3 SERIES
+  - S60
+  - A6
+  - SORENTO
+  - CAMARO
+  - MDX
+  - 6 SERIES
+  - SANTA FE
+  - ELANTRA COUPE
+  - G SEDAN
+  - G COUPE
+  - ELANTRA
+  - ALTIMA
+  - M-CLASS
+  - RANGE ROVER SPORT
+  - E-CLASS
+  - FRONTIER
+  - PASSAT
+  - BEETLE
+  - 5 SERIES
+  - X3
+  - A4
+  - ESCAPE
+  - FOCUS
+  - E-SERIES WAGON
+  - CRUZE
+  - FIESTA
+  - CIVIC
+  - ACCORD
+  - ODYSSEY
+  - XK
+  - COOPER
+  - XJ
+  - M
+  - WRANGLER
+  - MKZ
+  - COOPER COUPE
+  - IS 250
+  - ES 350
+  - C-CLASS
+  - '911'
+  - CAMRY
+  - RDX
+  - RAV4
+  - MALIBU
+  - GENESIS
+  - RANGER
+  - TRAVERSE
+  - EDGE
+  - NITRO
+  - SONATA
+  - '300'
+  - GRAND CARAVAN
+  - CHALLENGER
+  - CHARGER
+  - MAZDA3
+  - XF
+  - '1500'
+  - COROLLA
+  - IMPALA
+  - SENTRA
+  - CTS
+  - AVALON
+  - FORESTER
+  - MURANO
+  - S-CLASS
+  - OPTIMA
+  - 7 SERIES
+  - MAGNUM
+  - SIERRA 1500
+  - EXPEDITION
+  - X5
+  - E350
+  - G-CLASS
+  - MAXIMA
+  - GS 450H
+  - YUKON XL
+  - TAHOE
+  - FUSION
+  - RONDO
+  - B9 TRIBECA
+  - A8
+  - F-350 SUPER DUTY
+  - RAM PICKUP 1500
+  - GRAND CHEROKEE
+  - QX56
+  - ARMADA
+  - G6
+  - IS 350
+  - MUSTANG
+  - RAM PICKUP 3500
+  - ELEMENT
+  - SUBURBAN
+  - DURANGO
+  - LS 430
+  - DAKOTA
+  - DEVILLE
+  - S4
+  - F-150
+  - SEBRING
+  - SILVERADO 1500HD
+  - PATHFINDER
+  - Z3
+  - SIENNA
+  - JETTA
+  - Q50
+  - ACCENT
+  - CR-V
+  - SONATA HYBRID
+  - PILOT
+  - CX-9
+  - CX-5
+  - FORTE
+  - MAZDA6
+  - SPORTAGE
+  - YARIS
+  - CAPTIVA SPORT
+  - '200'
+  - EXPRESS
+  - RS 7
+  - TUNDRA
+  - TACOMA
+  - CTS WAGON
+  - COMPASS
+  - CC
+  - F-450 SUPER DUTY
+  - RX 350
+  - PRIUS
+  - QUEST
+  - AVALANCHE
+  - EQUINOX
+  - SAFARI CARGO
+  - SPECTRA
+  - ES 330
+  - VUE
+  - HIGHLANDER
+  - BOXSTER
+  - CLA-CLASS
+  - A3
+  - TOWN AND COUNTRY
+  - GRAND
+  - '2500'
+  - '3500'
+  - CAMRY HYBRID
+  - XC90
+  - Q5
+  - SRX
+  - ESCALADE ESV
+  - SILVERADO 2500HD
+  - HHR
+  - AVENGER
+  - JOURNEY
+  - FUSION HYBRID
+  - ACADIA
+  - CR-Z
+  - FX
+  - TUCSON
+  - EX
+  - G CONVERTIBLE
+  - PATRIOT
+  - GX 460
+  - RANGE ROVER
+  - NAVIGATOR
+  - GLK-CLASS
+  - ROGUE
+  - CAYENNE
+  - XB
+  - LEGACY
+  - IMPREZA
+  - FJ CRUISER
+  - ENCLAVE
+  - 5 SERIES GRAN TURISMO
+  - COBALT
+  - TERRAIN
+  - M35
+  - HS 250H
+  - SOUL
+  - E-SERIES VAN
+  - MKX
+  - 370Z
+  - S5
+  - TT
+  - TSX
+  - Q7
+  - PT CRUISER
+  - RAM PICKUP 2500
+  - YUKON
+  - LS 460
+  - TOWN CAR
+  - MARINER
+  - MARINER HYBRID
+  - G5
+  - VERSA
+  - MATRIX
+  - TOUAREG 2
+  - LUCERNE
+  - EXPLORER
+  - SILVERADO 1500
+  - EXPRESS CARGO
+  - UPLANDER
+  - SPRINTER CARGO
+  - F-250 SUPER DUTY
+  - TAURUS X
+  - TAURUS
+  - RIDGELINE
+  - FIT
+  - AZERA
+  - LIBERTY
+  - COMMANDER
+  - FX35
+  - TRIBUTE
+  - CL-CLASS
+  - MOUNTAINEER
+  - G8
+  - GRAND PRIX
+  - AURA
+  - TITAN
+  - OUTLOOK
+  - EOS
+  - M5
+  - DTS
+  - LACROSSE
+  - SILVERADO 1500 CLASSIC
+  - TRAILBLAZER
+  - H3
+  - G35
+  - CLK-CLASS
+  - R-CLASS
+  - MILAN
+  - TORRENT
+  - RENO
+  - TC
+  - FORENZA
+  - SKY
+  - ION
+  - S40
+  - GTI
+  - M3
+  - TERRAZA
+  - COLORADO
+  - TRAILBLAZER EXT
+  - ECONOLINE CARGO
+  - ENVOY XL
+  - FREESTYLE
+  - FIVE HUNDRED
+  - XJ-SERIES
+  - RX 400H
+  - MONTEREY
+  - OUTBACK
+  - 9-7X
+  - SEQUOIA
+  - TL
+  - ESCALADE
+  - MALIBU MAXX
+  - PACIFICA
+  - XG350
+  - TIBURON
+  - AMANTI
+  - SEDONA
+  - MPV
+  - QX80
+  - CHEROKEE
+  - OUTLANDER
+  - VIBE
+  - GTO
+  - XTERRA
+  - L300
+  - 4RUNNER
+  - NEW BEETLE
+  - ESCALADE EXT
+  - CROSSFIRE
+  - AVIATOR
+  - ALERO
+  - C70
+  - MR2 SPYDER
+  - RS 6
+  - RSX
+  - CENTURY
+  - CADENZA
+  - M45
+  - ES 300
+  - SL-CLASS
+  - GALANT
+  - ECLIPSE
+  - XC70
+  - S80
+  - INTREPID
+  - WINDSTAR
+  - PROTEGE5
+  - REGAL
+  - COOPER CLUBMAN
+  - SLK-CLASS
+  - V70
+  - VENTURE
+  - LESABRE
+  - BLAZER
+  - E250
+  - EXCURSION
+  - MONTE CARLO
+  - SONOMA
+  - S-TYPE
+  - GRAND VITARA
+  - PRELUDE
+  - FIREBIRD
+  - PROTEGE
+  - GS 300
+  - LANCER EVOLUTION
+  - CONTOUR
+  - C/K 1500 SERIES
+  - LS 400
+  - VERSA NOTE
+  - ILX
+  - A5
+  - SONIC
+  - C-MAX HYBRID
+  - C-MAX ENERGI
+  - ATS
+  - RIO
+  - MKS
+  - COOPER COUNTRYMAN
+  - OUTLANDER SPORT
+  - JUKE
+  - FORTWO
+  - BRZ
+  - FR-S
+  - XV CROSSTREK
+  - TTS
+  - CTS COUPE
+  - FLEX
+  - SPARK
+  - TRANSIT CONNECT
+  - ELANTRA TOURING
+  - GENESIS COUPE
+  - VELOSTER
+  - LANCER
+  - CUBE
+  - TAHOE HYBRID
+  - EXPEDITION EL
+  - ESCAPE HYBRID
+  - SX4
+  - 350Z
+  - CORVETTE
+  - ENVOY
+  - GX
+  - LS
+  - L-SERIES
+  - ASTRO
+  - CT 200H
+  - TROOPER
+  - MURANO CROSSCABRIOLET
+  - LEAF
+  - VENZA
+  - X1
+  - IMPALA LIMITED
+  - PANAMERA
+  - G3500
+  - AVEO
+  - MALIBU CLASSIC
+  - ASPEN
+  - HIGHLANDER HYBRID
+  - CAMRY SOLARA
+  - RANGE
+  - CARAVAN
+  - EXPLORER SPORT TRAC
+  - AERIO
+  - RX 330
+  - VERONA
+  - GRAND AM
+  - GRAND MARQUIS
+  - LX 470
+  - CAVALIER
+  - LEGEND
+  - MIRAGE
+  - DART
+  - CROSSTOUR
+  - MAZDA2
+  - '500'
+  - CALIBER
+  - INSIGHT
+  - SIERRA 2500HD
+  - M37
+  - SABLE
+  - ROGUE SELECT
+  - VOLT
+  - TOWN
+  - ENDEAVOR
+  - X-TYPE
+  - RX 300
+  - S10
+  - RL
+  - SEVILLE
+  - CONTINENTAL
+  - X6
+  - 4 SERIES
+  - E150
+  - RX 450H
+  - CX-7
+  - ALTIMA HYBRID
+  - MARK LT
+  - TOUAREG
+  - AXIOM
+  - CL
+  - S-10
+  - AVALON HYBRID
+  - GS 350
+  - BEETLE CONVERTIBLE
+  - SHELBY GT500
+  - ZEPHYR
+  - LAND CRUISER
+  - JETTA SPORTWAGEN
+  - VERACRUZ
+  - NV
+  - GL-CLASS
+  - 750I
+  - TRIBECA
+  - RABBIT
+  - LR3
+  - MX-5 MIATA
+  - C230WZ
+  - GLI
+  - BORREGO
+  - EXPLORER SPORT
+  - COUGAR
+  - CROWN VICTORIA
+  - QX60
+  - NV CARGO
+  - GOLF R
+  - A7
+  - LR4
+  - XD
+  - GOLF
+  - GX 470
+  - MAZDASPEED MAZDA3
+  - XK-SERIES
+  - 500L
+  - FREESTAR
+  - H2
+  - THUNDERBIRD
+  - SUNFIRE
+  - 300M
+  - ELANTRA GT
+  - TIGUAN
+  - Z4
+  - QX
+  - GR
+  - INTEGRA
+  - LX 570
+  - MAZDA5
+  - RANGE ROVER EVOQUE
+  - RELAY
+  - MONTANA
+  - PROMASTER CARGO VAN
+  - 3 SERIES GRAN TURISMO
+  - XTS
+  - LUMINA
+  - STS
+  - MKZ HYBRID
+  - SOLSTICE
+  - C30
+  - SILVERADO 2500HD CLASSIC
+  - SR
+  - XL-7
+  - V50
+  - NEON
+  - IS 300
+  - RODEO
+  - S-SERIES
+  - FOCUS ST
+  - JX
+  - XC60
+  - X5 M
+  - 1 SERIES
+  - CLS-CLASS
+  - SIERRA 1500 CLASSIC
+  - SSR
+  - ENVOY XUV
+  - CANYON
+  - CIRRUS
+  - SAVANA CARGO
+  - Q60 CONVERTIBLE
+  - 9-3
+  - DIAMANTE
+  - CATERA
+  - ES 300H
+  - LR2
+  - FUSION ENERGI
+  - LANCER SPORTBACK
+  - SILVERADO 3500HD
+  - IS 250 C
+  - SILVERADO 2500
+  - DB9
+  - COOPER PACEMAN
+  - ACCORD CROSSTOUR
+  - MONTEGO
+  - VERANO
+  - BONNEVILLE
+  - FREELANDER
+  - MILLENIA
+  - ROUTAN
+  - RENDEZVOUS
+  - BRAVADA
+  - ECHO
+  - GS 400
+  - RAINIER
+  - SANTA FE SPORT
+  - QX70
+  - CLASSIC
+  - QX4
+  - ZDX
+  - CTS-V
+  - G37
+  - MONTERO
+  - LX 450
+  - TSX SPORT WAGON
+  - IQ
+  - STRATUS
+  - S70
+  - CELICA
+  - ALLROAD
+  - IMPREZA WRX
+  - 6 SERIES GRAN COUPE
+  - BAJA
+  - CONCORDE
+  - CABRIO
+  - JETTA GLI
+  - '3'
+  - ECLIPSE SPYDER
+  - SILVERADO 3500
+  - INTRIGUE
+  - PARK AVENUE
+  - ELDORADO
+  - G20
+  - V60
+  - NAVIGATOR L
+  - PRIUS V
+  - R32
+  - I35
+  - ESCORT
+  - MALIBU HYBRID
+  - ALLROAD QUATTRO
+  - XL7
+  - '6'
+  - ENTOURAGE
+  - PRIUS PLUG-IN
+  - ENCORE
+  - TRUCK
+  - SPRINTER
+  - MARK VIII
+  - Q60 COUPE
+  - RS 5
+  - EIGHTY-EIGHT
+  - NV200
+  - EQUUS
+  - '626'
+  - SC 300
+  - SIERRA 3500
+  - MAZDASPEED 3
+  - 500-CLASS
+  - GS 430
+  - MONTERO SPORT
+  - XA
+  - PRIUS C
+  - MKT
+  - EX35
+  - MKC
+  - IS F
+  - Crown Victoria
+  - SC 430
+  - B-SERIES PICKUP
+  - KIZASHI
+  - 300-CLASS
+  - K900
+  - WRX
+  - CAYMAN
+  - C/V TRADESMAN
+  - ECONOLINE WAGON
+  - TRACKER
+  - TRANSIT VAN
+  - TRANSIT WAGON
+  - QUATTROPORTE
+  - F-TYPE
+  - WINDSTAR CARGO
+  - 4 SERIES GRAN COUPE
+  - Q45
+  - SIERRA 3500HD
+  - G3
+  - RS 4
+  - GALLARDO
+  - GHOST
+  - DISCOVERY SERIES II
+  - 2 SERIES
+  - X4
+  - 9-2X
+  - PROWLER
+  trim:
+  - 328I SULEV
+  - T5
+  - 3.0T PRESTIGE QUATTRO
+  - LX
+  - LT
+  - ADVANCE AND ENTERTAINMENT PACKAGES
+  - 650I
+  - LIMITED
+  - SE
+  - G37 JOURNEY
+  - G37 SPORT
+  - GLS
+  - SPORT 2.0T
+  - '2.5'
+  - G37X
+  - ML350
+  - SUPERCHARGED LIMITED EDITION
+  - E350 SPORT
+  - S
+  - TDI SE
+  - 2.5L PZEV
+  - 328I
+  - 550I
+  - XDRIVE28I
+  - 2.0T PREMIUM QUATTRO
+  - 640I
+  - SEL
+  - E-350 SUPER DUTY XL
+  - 1LT
+  - SES
+  - LX-P
+  - EX
+  - G25
+  - XKR
+  - BASE
+  - SUPERCHARGED
+  - M37
+  - UNLIMITED SPORT
+  - C250 SPORT
+  - CARRERA S (MIDYEAR REDESIGN)
+  - 2.5 S
+  - SH-AWD
+  - SE PZEV
+  - SPORT
+  - 335D
+  - LT1
+  - '4.6'
+  - XL
+  - LS
+  - HEAT
+  - SRT8
+  - SXT
+  - S SPORT
+  - G37
+  - ST
+  - LE
+  - 2.0 S
+  - PERFORMANCE
+  - C300 SPORT
+  - 2.5X
+  - SL
+  - DX-VP
+  - S550
+  - 750LI
+  - DENALI
+  - 4.8I
+  - EX V-6
+  - 3.0SI
+  - CLUB WAGON XLT
+  - G500
+  - 3.5 SL
+  - SE SULEV
+  - SLT
+  - LIMITED 7-PASSENGER
+  - L QUATTRO
+  - 2.0T
+  - 3.5 SE
+  - CE
+  - LARAMIE
+  - V6
+  - 1500 LS
+  - 325CI
+  - GLS 1.8T 4MOTION
+  - XLT
+  - 2.5 SL
+  - QUATTRO
+  - 2.8 QUATTRO
+  - 740IL
+  - '2.3'
+  - XLE
+  - VP
+  - EDDIE BAUER
+  - GL
+  - GXE
+  - PREMIUM
+  - 5.0 R-SPEC
+  - TOURING
+  - GRAND TOURING
+  - I GRAND TOURING
+  - I TOURING
+  - FE+ SV
+  - PLATINUM
+  - E63 AMG 4MATIC
+  - 2LT
+  - LT FLEET
+  - 750LI XDRIVE
+  - GT
+  - SLT 1500
+  - LS 3500
+  - XDRIVE35I
+  - PRESTIGE QUATTRO
+  - SH-AWD W/TECHNOLOGY PACKAGE
+  - TUNDRA
+  - EX-L
+  - 3.5 SR
+  - PREMIUM LUXURY
+  - LUXURY
+  - X
+  - SPECTRA5
+  - XLT POPULAR
+  - 325I
+  - CLA250
+  - C250
+  - LTZ
+  - 1.8 TFSI PREMIUM
+  - R/T
+  - V 4X2 ULT ADVENT
+  - LARAMIE LONGHORN EDITION
+  - SPORT PZEV
+  - FLEET
+  - '3.2'
+  - WORK TRUCK
+  - TOURING-L
+  - CREW
+  - EXPRESS
+  - FX2
+  - SLT-1
+  - FX35
+  - EX35
+  - HSE
+  - L
+  - GLK350
+  - 3.5 SV
+  - SV
+  - '2'
+  - 2.5I PREMIUM
+  - WRX STI
+  - 3.6R LIMITED
+  - 2.5X PREMIUM
+  - LE 7-PASSENGER MOBILITY AUTO ACCESS
+  - CXL1
+  - 1SS
+  - SE FLEET
+  - EX-L V-6
+  - '!'
+  - E-150
+  - S GRAND TOURING
+  - C300 SPORT 4MATIC
+  - S550 4MATIC
+  - SPORTWAGEN TDI
+  - 3.2 PREMIUM QUATTRO
+  - 3.2 QUATTRO
+  - 3.6 QUATTRO
+  - 335I
+  - XDRIVE30I
+  - 1500 LT1
+  - E-350 SUPER DUTY XLT
+  - E350
+  - C300 LUXURY
+  - SIGNATURE LIMITED
+  - PREMIER
+  - 1.8 S
+  - V6 TDI
+  - 528I
+  - CXL
+  - TITANIUM
+  - AWD V6 AWD
+  - '2500'
+  - 3500 170 WB
+  - XLS
+  - FX4
+  - STX
+  - SLE 1500
+  - SLT-2
+  - RT
+  - CL550
+  - E350 4MATIC
+  - GXP
+  - VALUE LEADER
+  - XE
+  - LE V6
+  - KOMFORT
+  - 530XI
+  - CX
+  - LT2
+  - C
+  - '3500'
+  - SLE
+  - SLE1
+  - LAREDO
+  - I
+  - ML500
+  - CLK350
+  - R350
+  - XR
+  - SE V6
+  - 330CI
+  - 330I
+  - 330XI
+  - LUXURY III
+  - CXS
+  - LT3
+  - '1500'
+  - E-250
+  - STANDARD
+  - GT PREMIUM
+  - XJ8
+  - 4C SE
+  - E320 CDI
+  - ES-V6
+  - MARQUIS
+  - '3'
+  - 2.5I SPECIAL EDITION
+  - 5.3I
+  - SR5
+  - LE 8-PASSENGER
+  - 2.4I
+  - 2.0T QUATTRO
+  - FWD V6
+  - ZX4 SE
+  - GT DELUXE
+  - 1500 SLE
+  - LX SPECIAL EDITION PZEV
+  - CLK320
+  - SIGNATURE
+  - LATITUDE
+  - TURBO
+  - VALUE EDITION PZEV
+  - CE 7-PASSENGER
+  - BI-COLOR EDITION
+  - 1.8T
+  - 2.7T S-LINE QUATTRO
+  - 530I
+  - 3.0 AVANT QUATTRO
+  - AWD EX
+  - UNLIMITED
+  - LX-V6
+  - E320
+  - '1.8'
+  - GL1
+  - GT1
+  - GTP
+  - LPT
+  - XLE 7-PASSENGER
+  - XRS
+  - TYPE-S
+  - 3.0I
+  - UNLIMITED SAHARA
+  - CARAV FWD SPORT
+  - NBX
+  - XLT FX4
+  - DELUXE
+  - SL500
+  - ES
+  - GS
+  - AWD X
+  - GLI VR6
+  - GLX
+  - '2.9'
+  - +
+  - SX
+  - DTS
+  - XLS CHOICE
+  - XLT CHOICE
+  - LX STANDARD
+  - ZX3 POWER PREMIUM
+  - LARIAT
+  - VALUE PACKAGE
+  - E430
+  - SLK320
+  - XC
+  - FWD EXT LS
+  - CUSTOM
+  - CARGO V8
+  - SS
+  - 4X2
+  - EX V6
+  - ML430
+  - CARTIER
+  - JLX
+  - 540I
+  - GLS 1.8T
+  - 4X2 ED BAUER
+  - OUTBACK SPORT
+  - 4X4 ED BAUER
+  - E300D
+  - DX
+  - GSR
+  - SL550
+  - CHEYENNE
+  - 1.6 SV
+  - TRADESMAN
+  - 2.5I LIMITED PZEV
+  - 2.5I PREMIUM PZEV
+  - TWO
+  - 2.0T PREMIUM PLUS QUATTRO
+  - PREMIUM PACKAGE
+  - 3.0T PREMIUM PLUS QUATTRO
+  - LTZ 1500
+  - TOURING W/NAVIGATION AND REAR ENTERTAINMENT
+  - I SV
+  - 1.6 S PLUS
+  - PURE COUPE
+  - 2.5I PZEV
+  - PRERUNNER V6
+  - TDI
+  - 2.0 TDI PREMIUM
+  - TECHNOLOGY PACKAGE
+  - SPECIAL EDITION
+  - PREMIUM PLUS QUATTRO
+  - XDRIVE50I
+  - ECO
+  - LS FLEET
+  - AMERICAN VALUE PACKAGE
+  - EL LIMITED
+  - LT 1500
+  - SHO
+  - CARGO VAN XLT
+  - '3.8'
+  - M37X
+  - OVERLAND
+  - HYBRID
+  - C300 LUXURY 4MATIC
+  - 1.8 SL
+  - 3.5 S
+  - 2.0 SL
+  - SXT FLEET
+  - IV
+  - SUPER
+  - KING RANCH
+  - CROSSOVER
+  - 328XI
+  - 3.6 PREMIUM QUATTRO
+  - 6C SE
+  - DHS
+  - Z85 LS BASE
+  - 3.2 TYPE-S
+  - '470'
+  - L100
+  - CARGO AWD W/YF7
+  - 1.8T QUATTRO
+  - ZTS
+  - GLE
+  - LEATHER GROUP
+  - PLATINUM EDITION
+  - PREMIUM I GROUP
+  - E350 LUXURY 4MATIC
+  - 2.0I
+  - THREE
+  - 535I
+  - GS-SPORT
+  - ML350 4MATIC
+  - PLATINUM FFV
+  - BIGHORN
+  - 4S
+  - E550
+  - XLE V6
+  - 2.5X LIMITED
+  - III
+  - CARGO 4X2
+  - RUBICON
+  - CARAVAN SE
+  - ZX3 S
+  - 3.0 QUATTRO
+  - ROVER SPORT S/C
+  - ROVER SPORT HSE
+  - 5-PASSENGER
+  - 2.5I LIMITED
+  - 2.5 PZEV
+  - V6 SE
+  - ADRENALIN
+  - SP23 SPECIAL EDITION
+  - C230 KOMPRESSOR
+  - 745I
+  - E-350 SUPER DUTY
+  - C230
+  - EL KING RANCH
+  - T6 ELITE
+  - 525I
+  - S500
+  - DE
+  - 328D
+  - 1.6 SL
+  - C JOHN VARVATOS
+  - PRERUNNER
+  - 550I XDRIVE
+  - TDI PREMIUM QUATTRO
+  - 328I XDRIVE
+  - 535I XDRIVE
+  - SLE-1
+  - SR
+  - '5'
+  - SE-R SPEC V
+  - CAR SIG LTD
+  - GLI 1.8T
+  - GLS TDI
+  - CARAV FWD SE
+  - JXI
+  - 4X2 EXT
+  - '3.5'
+  - SLS
+  - SR5 V6
+  - 328I XDRIVE SULEV
+  - WAGON XLT
+  - SLE-2
+  - 535D XDRIVE
+  - 435I
+  - 528I XDRIVE
+  - 1.6 S
+  - UPTOWN
+  - MAINSTREET
+  - WAGON V8 XLT
+  - CARGO COMMERCIAL
+  - S TOURING
+  - R350 4MATIC
+  - PASSION
+  - OUTBACK SPORT SPECIAL EDITION
+  - WRX
+  - 325XI
+  - 4X4 V6 NBX
+  - V8
+  - TURBO PZEV
+  - I SPORT
+  - TRAIL
+  - 1.8 BASE
+  - SPORTWAGEN SE PZEV
+  - SEL PLUS
+  - UNLIMITED X
+  - S500 4MATIC
+  - 745LI
+  - 4X4 V6 XLT
+  - Z71
+  - 323I
+  - XDRIVE35I PREMIUM
+  - 2500 SV
+  - 335IS
+  - GL450 4MATIC
+  - 750I
+  - 4X2 XLT
+  - 2.0 SR
+  - LIMITED 5-PASSENGER
+  - 4.2 PREMIUM QUATTRO
+  - GL450
+  - SE OFF-ROAD
+  - V8 HSE
+  - 2.5I TOURING PZEV
+  - SAHARA
+  - WRX PREMIUM
+  - C230 SPORT
+  - SL320
+  - AUTOBAHN PZEV
+  - SEL PZEV
+  - G25X
+  - 2.5I
+  - SLE V6
+  - E500
+  - '4'
+  - EXECUTIVE
+  - 3500 S
+  - 2.0I PREMIUM PZEV
+  - PREMIUM GROUP
+  - BEV
+  - GLS PZEV
+  - TUNDRA FFV
+  - PREMIUM QUATTRO
+  - 2.0I SPORT PREMIUM PZEV
+  - XLE 8-PASSENGER
+  - S PZEV
+  - 2.5L
+  - LTZ FLEET
+  - 2.0T PREMIUM
+  - I SPORT VALUE EDITION
+  - ML320 CDI
+  - 2.5T
+  - XK
+  - WOLFSBURG EDITION PZEV
+  - EASY
+  - SE1
+  - GLX 4MOTION
+  - SLT PLUS
+  - TRAILHAWK
+  - 320I
+  - L 4.2 QUATTRO
+  - 740LI
+  - SDRIVE28I
+  - QX56
+  - PZEV
+  - EXECUTIVE SULEV
+  - T6
+  - CARAVAN CREW
+  - PURE
+  - LUX LIMITED PZEV
+  - 335I XDRIVE
+  - 1500 LTZ
+  - ZX4 SES
+  - 3.0L
+  - C320
+  - 320I XDRIVE
+  - 1500 HIGH ROOF
+  - SEL 4MOTION
+  - 428I
+  - 428I XDRIVE
+  - 428I XDRIVE SULEV
+  - LX PZEV
+  - SPORT AWD
+  - LW200
+  - EX HYBRID
+  - LOUNGE
+  - POP
+  - GLK350 4MATIC
+  - KOMFORT SULEV
+  - TDI SPORT
+  - V6 LUXURY
+  - IPL
+  - EX TURBO
+  - PRO-4X
+  - XDRIVE48I
+  - MR
+  - LE 7-PASSENGER
+  - V8 SE
+  - AWD X PREMIUM
+  - 1500 4X4 CR SLT
+  - 4X4 EX-L
+  - R500
+  - ZX5 SE
+  - AWD XS
+  - CHOICE
+  - JX35
+  - SH-AWD W/ADVANCE PACKAGE
+  - 128I
+  - LX-S
+  - GL550
+  - CLS550
+  - E550 4MATIC
+  - 4X2 V6 XLS
+  - Z71 SLE
+  - '2.4'
+  - TOURING EDITION
+  - ML320
+  - LXI
+  - 2.2 PREMIUM
+  - AUTOBIOGRAPHY
+  - F SPORT
+  - 3.0T PREMIUM QUATTRO
+  - E63 AMG
+  - AERO
+  - R
+  - DARK FLINT EDITION
+  - VANDEN PLAS
+  - VR-X
+  - SPECIAL
+  - SUMMIT
+  - SVT RAPTOR
+  - 1500 LT
+  - 3.8 TRACK
+  - RTX
+  - ULTIMATE
+  - Z85
+  - XLS SPORT
+  - SE LUXURY
+  - 750I XDRIVE
+  - 1500 SV
+  - S400 HYBRID
+  - CL550 4MATIC
+  - GTS
+  - 135I
+  - LUX
+  - GLI
+  - OUTBACK
+  - TURBO S
+  - VOLANTE
+  - HPT
+  - 135IS
+  - GRAND SPORT
+  - HSE LUX
+  - TOURING ELITE
+  - M35H
+  - CLS550 4MATIC
+  - 2.5X TOURING PZEV
+  - X-RUNNER V6
+  - LS 1500
+  - 2.5 I
+  - FX37
+  - SEL DELUXE
+  - SL1
+  - L 4.0T QUATTRO
+  - S SPECIAL EDITION
+  - CARGO
+  - AVEO5 LS
+  - 545I
+  - G3500
+  - PREMIUM II GROUP
+  - XDRIVE35D
+  - E350 LUXURY
+  - 3.0 R L.L.BEAN EDITION
+  - L 3.0T QUATTRO
+  - XLE LIMITED 7-PASSENGER
+  - CONVENIENCE
+  - 2.0T SPORTCOMBI
+  - 2.5 X L.L.BEAN EDITION
+  - NISMO
+  - CITADEL
+  - UNLIMITED RUBICON
+  - GTZ V6
+  - EX-L W/REAR ENTERTAINMENT
+  - LX HYBRID
+  - SI
+  - E350 SPORT 4MATIC
+  - CONVENIENCE GROUP
+  - TOURING GROUP
+  - KOUP SX
+  - CARGO VAN XL
+  - TDI LUX
+  - Z06
+  - '4.2'
+  - S430
+  - 2.4T
+  - RTL
+  - 2.5 X
+  - '1'
+  - EX-L W/NAVIGATION
+  - 2.5X PREMIUM PZEV
+  - VR6 SPORT
+  - 4.2 QUATTRO
+  - SE-R
+  - ZTW
+  - SE3
+  - XE V6
+  - EX-L V-6 W/NAVIGATION
+  - 328D XDRIVE
+  - 2500 HIGH ROOF
+  - GL350 BLUETEC
+  - HARLEY-DAVIDSON
+  - 335XI
+  - 1500 LOW ROOF
+  - R-LINE PZEV
+  - PREMIUM III GROUP
+  - CLASSIC
+  - 3.2 R-DESIGN
+  - C280 LUXURY 4MATIC
+  - LX SPECIAL EDITION
+  - V8 LUXURY
+  - GT2
+  - '1.6'
+  - RENEGADE
+  - 740I
+  - E-150 XL
+  - CXL TURBO
+  - SPECTRA5 SX
+  - 528XI
+  - C350 SPORT
+  - 4.4I
+  - LSE
+  - GL (1999.5)
+  - SRT
+  - EDITION 30 PZEV
+  - S350 BLUETEC 4MATIC
+  - SLK250
+  - 2.0T WHITE TURBO LAUNCH EDITION PZEV
+  - 2.0T R-SPEC
+  - 2SS
+  - ML63 AMG
+  - ZQ8 LS
+  - C320 SPORT
+  - LS PREMIUM
+  - GL2
+  - 1500 SLT
+  - GX
+  - GLS VR6
+  - I4
+  - S320 LWB
+  - EL XLT
+  - TUNDRA GRADE
+  - GT-S
+  - CLS63 AMG
+  - LIMITED FFV
+  - 60TH ANNIVERSARY
+  - 645CI
+  - ZX5
+  - HYBRID TOURING
+  - SLK280
+  - LIMITED PZEV
+  - GL550 4MATIC
+  - CXL2
+  - RIO5 SX
+  - RTS
+  - CLS500
+  - ZX3
+  - LX V6
+  - 428I SULEV
+  - HIGH COUNTRY
+  - RALLIART
+  - 3.5 SE-R
+  - GL 1.8T
+  - WAGON XLT LWB
+  - V6 EXECUTIVE
+  - PREMIUM 2 TURBO
+  - R-LINE
+  - VR6 LUX
+  - XSPORT
+  - S ALL4
+  - ACTIVEHYBRID 3
+  - C POP
+  - VALUE EDITION
+  - 2.5 X PREMIUM PACKAGE
+  - L 7-PASSENGER
+  - ADVANCED
+  - 2.5L FINAL EDITION PZEV
+  - T5 DRIVE-E
+  - ELECTRIC DRIVE CABRIOLET
+  - DIESEL
+  - SRT8 392
+  - SRT-8
+  - CL500
+  - SC1
+  - 3.0T S LINE PRESTIGE QUATTRO
+  - LIMITED EDITION
+  - BASE PZEV
+  - SL600
+  - XLT VALUE
+  - G
+  - SRT8 CORE
+  - RALLYE
+  - 2500 170 WB CARGO
+  - CARRERA
+  - 650I XDRIVE
+  - SLT1
+  - SE-V6
+  - XK8
+  - TREKKING
+  - UNLIMITED RUBICON HARD ROCK
+  - LE PLUS
+  - 2.0 TFSI PREMIUM PLUS QUATTRO
+  - KOUP EX
+  - CLK430
+  - EXECUTIVE L FLEET
+  - Z85 SLE
+  - BASE 7-PASSENGER
+  - S KROM EDITION
+  - 3.0T QUATTRO
+  - LT2 XFE
+  - JOURNEY
+  - XLS POPULAR
+  - 323IS
+  - PORTFOLIO
+  - WOLFSBURG EDITION
+  - GLX 1.8T
+  - 3.8 ULTIMATE
+  - 3.2 PREMIUM PLUS QUATTRO
+  - 500SL
+  - SES DELUXE
+  - TIPTRONIC
+  - 1794 FFV
+  - 2.0T PZEV PREMIUM
+  - SE2
+  - 2.7T QUATTRO
+  - GL PZEV
+  - ZQ8
+  - C350
+  - 180HP
+  - AVEO5 2LT
+  - S PLUS
+  - 2.5X PZEV
+  - PLUS
+  - VR6 FSI
+  - 2.5 TS
+  - SL2
+  - LE ECO
+  - T TURBO
+  - ONE
+  - GL350 BLUETEC 4MATIC
+  - SLT2 1500
+  - V8 FSI
+  - ZX3 SES
+  - L 35TH ANNIVERSARY EDITION
+  - C240
+  - UNLIMITED FREEDOM EDITION
+  - 2.0L TDI
+  - C/V
+  - C240 LUXURY
+  - 225HP QUATTRO
+  - ULTRA
+  - SC
+  - LS2
+  - Base
+  - HD
+  - B2300
+  - S320 SWB
+  - VE
+  - SLE2
+  - SPECIAL EDITION V-6
+  - SL 1500
+  - E320 4MATIC
+  - FE+ S
+  - 300SE
+  - L TDI QUATTRO
+  - SRT-10
+  - ZX2
+  - HARDTOP
+  - LX FLEET
+  - SLK350
+  - C LOUNGE
+  - C280
+  - C63 AMG
+  - PASSION COUPE
+  - 525XI
+  - PREMIUM 1
+  - S 4MOTION
+  - BLUE
+  - 2LS FLEET
+  - PREMIUM I
+  - LIMITED JET
+  - LUX LIMITED
+  - LS ULTIMATE
+  - E500 4MATIC
+  - SVE-V6
+  - OFF-ROAD
+  - GLX V6 4MOTION
+  - GLX V6
+  - 250 MEDIUM ROOF
+  - 350 XL LOW ROOF
+  - PREMIUM 2
+  - CXL PREMIUM
+  - PANEL LS
+  - CL63 AMG
+  - LONGHORN
+  - 2.0T PREMIUM PLUS
+  - S HYBRID
+  - HERO
+  - 2.5 XT LIMITED
+  - CINCO
+  - PREMIUM 1 TURBO
+  - TDI EXECUTIVE
+  - ZX4 ST
+  - ECOBOOST
+  - T5 DRIVE-E PREMIER
+  - XJ8 L
+  - G550
+  - SPORTCROSS
+  - STI
+  - 2.5XT PREMIUM
+  - C280 LUXURY
+  - TDI PREMIUM PLUS QUATTRO
+  - EX-P
+  - VR6
+  - HYBRID W/TECHNOLOGY PACKAGE
+  - V8 S
+  - CROSSROAD
+  - 3.0 PREMIUM
+  - 2.5X LIMITED PZEV
+  - CONVENIENCE GROUP 2
+  - LE POPULAR PACKAGE
+  - S600
+  - XJ6L
+  - ABARTH
+  - HYBRID SPORT
+  - SE COMFORT
+  - 2.5XT LIMITED
+  - TRIPLE WHITE
+  - SXT PLUS
+  - ES-SPORT
+  - SE 4MOTION
+  - TECHNOLOGY AND ENTERTAINMENT PACKAGES
+  - T6 R-DESIGN
+  - STI LIMITED
+  - RIO5 LX
+  - XLT PREMIUM
+  - TDI SEL PREMIUM
+  - SDRIVE35I
+  - 2.0T AVANT PREMIUM QUATTRO
+  - 2.0I LIMITED PZEV
+  - SPYDER
+  - TDI PRESTIGE QUATTRO
+  - CLK500
+  - ES V6
+  - S430 4MATIC
+  - WAGON XLT PREMIUM
+  - 3.8 GRAND TOURING
+  - XLE PREMIUM
+  - S63 AMG 4MATIC
+  - STS
+  - C350 4MATIC
+  - 228I
+  - C240 LUXURY 4MATIC
+  - GTS V6
+  - E420
+  - 4.6IS
+  - LINEAR
+  - G63 AMG
+  - XJL SUPERCHARGED
+  body:
+  - SEDAN
+  - SUV
+  - COUPE
+  - CONVERTIBLE
+  - CAB
+  - HATCHBACK
+  - VAN
+  - WAGON
+  - PICKUP
+  transmission:
+  - AUTOMATIC
+  - MANUAL
+  state:
+  - ca
+  - wi
+  - va
+  - ga
+  - mi
+  - pr
+  - pa
+  - tx
+  - il
+  - mo
+  - oh
+  - wa
+  - fl
+  - nc
+  - co
+  - ne
+  - mn
+  - ab
+  - tn
+  - in
+  - az
+  - ut
+  - nj
+  - sc
+  - 'on'
+  - la
+  - ny
+  - nv
+  - md
+  - ma
+  - ok
+  - or
+  - hi
+  - qc
+  - nm
+  - al
+  - ms
+  - ns
+  color:
+  - GRAY
+  - WHITE
+  - BLACK
+  - SILVER
+  - RED
+  - BLUE
+  - "\u2014"
+  - GREEN
+  - BURGUNDY
+  - GOLD
+  - BEIGE
+  - YELLOW
+  - BROWN
+  - ORANGE
+  - PURPLE
+  - OFF-WHITE
+  - TURQUOISE
+  - CHARCOAL
+  - LIME
+  - PINK
+  interior:
+  - black
+  - gray
+  - "\u2014"
+  - brown
+  - beige
+  - white
+  - tan
+  - silver
+  - blue
+  - purple
+  - red
+  - gold
+  - burgundy
+  - off-white
+  - yellow
+  - orange
+  - green

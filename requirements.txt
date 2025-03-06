@@ -1,4 +1,4 @@
-panda
+pandas
 numpy
 scikit-learn
 matplotlib
@@ -7,3 +7,13 @@ ipykernel
 kagglehub
 tensorflow
 python-dotenv
+scipy
+PyYAML
+pyspark
+mlflow
+catboost
+xgboost
+fastapi
+uvicorn
+boto3
+opencv-python

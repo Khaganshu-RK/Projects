@@ -1,8 +1,8 @@
-name: Cars_Sales_ML_Regression_Project
+name: CNN_Project
 
 services:
   frontend:
-    image: khaganshur/cars-sales-ml-regression-frontend:latest
+    image: khaganshur/cnn-project-frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -16,7 +16,7 @@ services:
     depends_on:
       - backend
   backend:
-    image: khaganshur/cars-sales-ml-regression-backend:latest
+    image: khaganshur/cnn-project-backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile

@@ -37,9 +37,11 @@ export default function FormPage() {
 
         setCategoricalData(result.schema.categorical);
         setNumericalData(result.schema.numerical);
-      } catch (err: any) {
+      } catch (err: unknown) {
         console.error("Fetch Error:", err);
-        setError(err.message);
+        if (err instanceof Error) {
+          setError(err.message);
+        }
       } finally {
         setLoading(false);
       }
@@ -82,7 +84,7 @@ export default function FormPage() {
       if (!response.ok) {
         throw new Error(result.error || "Something went wrong!");
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Submission Error:", error);
       alert("Failed to get prediction. Please try again.");
     }

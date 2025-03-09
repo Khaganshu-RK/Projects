@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+numpy
+scikit-learn
+pandas
+# catboost
+xgboost
+PyYAML
+tensorflow
+opencv-python
+python-multipart

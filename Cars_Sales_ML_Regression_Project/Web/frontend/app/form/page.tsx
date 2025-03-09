@@ -3,6 +3,29 @@
 import { useEffect, useState } from "react";
 
 export default function FormPage() {
+  const [carsData, setCarsData] = useState<
+    Record<
+      string,
+      {
+        models: Record<
+          string,
+          {
+            bodies: Record<
+              string,
+              {
+                trims: Record<
+                  string,
+                  {
+                    transmissions: string[];
+                  }
+                >;
+              }
+            >;
+          }
+        >;
+      }
+    >
+  >({});
   const [categoricalData, setCategoricalData] = useState<
     Record<string, string[]>
   >({});
@@ -27,14 +50,16 @@ export default function FormPage() {
 
         if (
           !result.schema ||
+          !result.schema.cars ||
           !result.schema.categorical ||
           !result.schema.numerical
         ) {
           throw new Error(
-            "Missing 'categorical' or 'numerical' data in API response"
+            "Missing 'cars', 'categorical', or 'numerical' data in API response"
           );
         }
 
+        setCarsData(result.schema.cars);
         setCategoricalData(result.schema.categorical);
         setNumericalData(result.schema.numerical);
       } catch (err: unknown) {
@@ -82,7 +107,7 @@ export default function FormPage() {
       }
 
       console.log("Prediction Result:", result);
-      alert(`Predicted VehicleSales Price: ${Math.round(result.prediction)}`);
+      alert(`Predicted Vehicle Sales Price: ${Math.round(result.prediction)}`);
     } catch (error: unknown) {
       console.error("Submission Error:", error);
       alert("Failed to get prediction. Please try again.");
@@ -99,26 +124,153 @@ export default function FormPage() {
         Predict Cars Sales Price
       </h1>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {Object.entries(categoricalData).map(([column, values]) => (
-          <div key={column} className="flex flex-col">
-            <label className="mb-1 font-semibold" htmlFor={column}>
-              {column}
+        {/* Make Dropdown */}
+        <div className="flex flex-col">
+          <label className="mb-1 font-semibold" htmlFor="make">
+            Make
+          </label>
+          <select
+            id="make"
+            className="rounded-md border p-2 text-black"
+            value={formData.make || ""}
+            onChange={(e) => handleInputChange("make", e.target.value)}>
+            <option value="">Select Make</option>
+            {Object.keys(carsData).map((make) => (
+              <option key={make} value={make}>
+                {make}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        {/* Model Dropdown */}
+        {formData.make && (
+          <div className="flex flex-col">
+            <label className="mb-1 font-semibold" htmlFor="model">
+              Model
             </label>
             <select
-              id={column}
+              id="model"
               className="rounded-md border p-2 text-black"
-              value={formData[column] || ""}
-              onChange={(e) => handleInputChange(column, e.target.value)}>
-              <option value="">Select {column}</option>
-              {values.map((value) => (
-                <option key={value} value={value}>
-                  {value}
+              value={formData.model || ""}
+              onChange={(e) => handleInputChange("model", e.target.value)}>
+              <option value="">Select Model</option>
+              {Object.keys(carsData[formData.make]?.models || {}).map(
+                (model) => (
+                  <option key={model} value={model}>
+                    {model}
+                  </option>
+                )
+              )}
+            </select>
+          </div>
+        )}
+
+        {/* Body Dropdown */}
+        {formData.model && (
+          <div className="flex flex-col">
+            <label className="mb-1 font-semibold" htmlFor="body">
+              Body
+            </label>
+            <select
+              id="body"
+              className="rounded-md border p-2 text-black"
+              value={formData.body || ""}
+              onChange={(e) => handleInputChange("body", e.target.value)}>
+              <option value="">Select Body</option>
+              {Object.keys(
+                carsData[formData.make]?.models[formData.model]?.bodies || {}
+              ).map((body) => (
+                <option key={body} value={body}>
+                  {body}
                 </option>
               ))}
             </select>
           </div>
-        ))}
+        )}
 
+        {/* Trim Dropdown */}
+        {formData.body && (
+          <div className="flex flex-col">
+            <label className="mb-1 font-semibold" htmlFor="trim">
+              Trim
+            </label>
+            <select
+              id="trim"
+              className="rounded-md border p-2 text-black"
+              value={formData.trim || ""}
+              onChange={(e) => handleInputChange("trim", e.target.value)}>
+              <option value="">Select Trim</option>
+              {Object.keys(
+                carsData[formData.make]?.models[formData.model]?.bodies[
+                  formData.body
+                ]?.trims || {}
+              ).map((trim) => (
+                <option key={trim} value={trim}>
+                  {trim}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+        {/* Rest of the categorical fields */}
+        {Object.entries(categoricalData)
+          .filter(
+            ([column]) =>
+              !["make", "model", "body", "trim", "transmission"].includes(
+                column
+              )
+          )
+          .map(([column, options]) => (
+            <div key={column} className="flex flex-col">
+              <label className="mb-1 font-semibold" htmlFor={column}>
+                {column}
+              </label>
+              <select
+                id={column}
+                className="rounded-md border p-2 text-black"
+                value={formData[column] || ""}
+                onChange={(e) => handleInputChange(column, e.target.value)}>
+                <option value="">Select {column}</option>
+                {options.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
+          ))}
+
+        {/* Transmission Dropdown (Fixed Duplicates) */}
+        {formData.trim && (
+          <div className="flex flex-col">
+            <label className="mb-1 font-semibold" htmlFor="transmission">
+              Transmission
+            </label>
+            <select
+              id="transmission"
+              className="rounded-md border p-2 text-black"
+              value={formData.transmission || ""}
+              onChange={(e) =>
+                handleInputChange("transmission", e.target.value)
+              }>
+              <option value="">Select Transmission</option>
+              {[
+                ...new Set(
+                  carsData[formData.make]?.models[formData.model]?.bodies[
+                    formData.body
+                  ]?.trims[formData.trim]?.transmissions || []
+                ),
+              ].map((transmission) => (
+                <option key={transmission} value={transmission}>
+                  {transmission}
+                </option>
+              ))}
+            </select>
+          </div>
+        )}
+
+        {/* Numerical Fields */}
         {Object.entries(numericalData)
           .filter(([column]) => column !== "sellingprice")
           .map(([column, { min, max, type }]) => (
@@ -134,13 +286,7 @@ export default function FormPage() {
                 min={min}
                 max={max}
                 value={formData[column] || ""}
-                onChange={(e) => {
-                  const value =
-                    type === "int"
-                      ? parseInt(e.target.value, 10)
-                      : parseFloat(e.target.value);
-                  handleInputChange(column, isNaN(value) ? "" : value);
-                }}
+                onChange={(e) => handleInputChange(column, e.target.value)}
               />
             </div>
           ))}

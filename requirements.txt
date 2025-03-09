@@ -17,3 +17,4 @@ fastapi
 uvicorn
 boto3
 opencv-python
+python-multipart

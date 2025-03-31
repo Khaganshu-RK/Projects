@@ -1,0 +1,99 @@
+[ 2025-03-09 19:12:32,249 ] INFO - Main started
+[ 2025-03-09 19:12:32,249 ] INFO - Starting Data Ingestion
+[ 2025-03-09 19:12:32,249 ] INFO - Copying file from cleaned_Data.csv to /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/01_Data_Ingestion/feature_store/cleaned_Data.csv
+[ 2025-03-09 19:12:32,251 ] INFO - Reading data from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/01_Data_Ingestion/feature_store/cleaned_Data.csv
+[ 2025-03-09 19:12:32,267 ] INFO - Splitting data into train and test and saving to /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/01_Data_Ingestion/ingested/train.csv and /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/01_Data_Ingestion/ingested/test.csv
+[ 2025-03-09 19:12:32,302 ] INFO - Data Ingestion completed successfully
+[ 2025-03-09 19:12:32,302 ] INFO - Reading yaml file from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Schema/data_schema.yaml
+[ 2025-03-09 19:12:32,519 ] INFO - Starting Data Validation
+[ 2025-03-09 19:12:32,519 ] INFO - Reading csv file from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/01_Data_Ingestion/ingested/test.csv
+[ 2025-03-09 19:12:32,522 ] INFO - Reading csv file from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/01_Data_Ingestion/ingested/train.csv
+[ 2025-03-09 19:12:32,532 ] INFO - Dataframes read successfully
+[ 2025-03-09 19:12:32,533 ] INFO - Validating columns in the dataframe for test
+[ 2025-03-09 19:12:32,533 ] INFO - Columns in the test dataframe are valid as per the schema file, column count is 14
+[ 2025-03-09 19:12:32,533 ] INFO - Validating columns in the dataframe for train
+[ 2025-03-09 19:12:32,533 ] INFO - Columns in the train dataframe are valid as per the schema file, column count is 14
+[ 2025-03-09 19:12:32,533 ] INFO - Detecting drift in the dataframe
+[ 2025-03-09 19:12:32,664 ] INFO - Writing yaml file to /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/02_Data_Validation/drift_report/drift_report.yaml
+[ 2025-03-09 19:12:32,665 ] INFO - Drift report saved at /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/02_Data_Validation/drift_report/drift_report.yaml
+[ 2025-03-09 19:12:32,665 ] INFO - No drift detected in the dataframe
+[ 2025-03-09 19:12:32,665 ] INFO - Drift detection completed
+[ 2025-03-09 19:12:32,665 ] INFO - Data Validation completed successfully
+[ 2025-03-09 19:12:32,700 ] INFO - Starting Data Transformation
+[ 2025-03-09 19:12:32,700 ] INFO - Reading csv file from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/02_Data_Validation/validated/train.csv
+[ 2025-03-09 19:12:32,711 ] INFO - Reading csv file from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/02_Data_Validation/validated/test.csv
+[ 2025-03-09 19:12:32,715 ] INFO - Transforming data
+[ 2025-03-09 19:12:32,715 ] INFO - Encoding the target variable
+[ 2025-03-09 19:12:32,715 ] INFO - Creating the pipeline
+[ 2025-03-09 19:12:32,716 ] INFO - Fitting and transforming the train data
+[ 2025-03-09 19:12:32,820 ] INFO - Transforming the test data
+[ 2025-03-09 19:12:32,865 ] INFO - Saving data as numpy array at /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/03_Data_Transformation/transformed/train.npy
+[ 2025-03-09 19:12:32,897 ] INFO - Saving data as numpy array at /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/03_Data_Transformation/transformed/test.npy
+[ 2025-03-09 19:12:32,907 ] INFO - Saving data as pickle at /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/03_Data_Transformation/transformed_object/input_preprocessor.pkl
+[ 2025-03-09 19:12:32,909 ] INFO - Data Transformation completed successfully
+[ 2025-03-09 19:12:32,923 ] INFO - Starting Model Training
+[ 2025-03-09 19:12:32,923 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/03_Data_Transformation/transformed/train.npy
+[ 2025-03-09 19:12:32,944 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/03_Data_Transformation/transformed/test.npy
+[ 2025-03-09 19:12:32,949 ] INFO - Regression Model Training started
+[ 2025-03-09 19:12:32,951 ] INFO - Evaluating regression model: RandomForest - RandomForestRegressor()
+[ 2025-03-09 19:15:31,915 ] INFO - Model: RandomForest, Train R2 score: 0.9938619500413136, Test R2 score: 0.974078789086694
+[ 2025-03-09 19:15:31,916 ] INFO - Evaluating regression model: GradientBoosting - GradientBoostingRegressor()
+[ 2025-03-09 19:19:10,371 ] INFO - Model: GradientBoosting, Train R2 score: 0.9798448570903286, Test R2 score: 0.9768768616634752
+[ 2025-03-09 19:19:10,372 ] INFO - Evaluating regression model: AdaBoost - AdaBoostRegressor()
+[ 2025-03-09 19:20:32,469 ] INFO - Model: AdaBoost, Train R2 score: 0.9521850946926582, Test R2 score: 0.9491261649893944
+[ 2025-03-09 19:20:32,470 ] INFO - Evaluating regression model: LinearRegression - LinearRegression()
+[ 2025-03-09 19:20:36,313 ] INFO - Model: LinearRegression, Train R2 score: 0.9737526163658283, Test R2 score: 0.9683391417463867
+[ 2025-03-09 19:20:36,313 ] INFO - Evaluating regression model: Ridge - Ridge()
+[ 2025-03-09 19:20:38,152 ] INFO - Model: Ridge, Train R2 score: 0.9733839872191942, Test R2 score: 0.9697362153668851
+[ 2025-03-09 19:20:38,152 ] INFO - Evaluating regression model: ElasticNet - ElasticNet()
+[ 2025-03-09 19:20:39,484 ] INFO - Model: ElasticNet, Train R2 score: 0.9665402757720014, Test R2 score: 0.9672842990502536
+[ 2025-03-09 19:20:39,484 ] INFO - Evaluating regression model: DecisionTree - DecisionTreeRegressor()
+[ 2025-03-09 19:20:41,011 ] INFO - Model: DecisionTree, Train R2 score: 0.9824519683667223, Test R2 score: 0.9679425439022781
+[ 2025-03-09 19:20:41,011 ] INFO - Evaluating regression model: KNeighbors - KNeighborsRegressor()
+[ 2025-03-09 19:20:48,404 ] INFO - Model: KNeighbors, Train R2 score: 0.9465019854696566, Test R2 score: 0.9252511374286903
+[ 2025-03-09 19:20:48,404 ] INFO - Evaluating regression model: SVR - SVR()
+[ 2025-03-09 19:32:13,698 ] INFO - Model: SVR, Train R2 score: 0.4911863914205792, Test R2 score: 0.5491238002974077
+[ 2025-03-09 19:32:13,699 ] INFO - Evaluating regression model: XGBoost - XGBRegressor(base_score=None, booster=None, callbacks=None,
+             colsample_bylevel=None, colsample_bynode=None,
+             colsample_bytree=None, device=None, early_stopping_rounds=None,
+             enable_categorical=False, eval_metric=None, feature_types=None,
+             gamma=None, grow_policy=None, importance_type=None,
+             interaction_constraints=None, learning_rate=None, max_bin=None,
+             max_cat_threshold=None, max_cat_to_onehot=None,
+             max_delta_step=None, max_depth=None, max_leaves=None,
+             min_child_weight=None, missing=nan, monotone_constraints=None,
+             multi_strategy=None, n_estimators=None, n_jobs=None,
+             num_parallel_tree=None, random_state=None, ...)
+[ 2025-03-09 19:32:20,538 ] INFO - Model: XGBoost, Train R2 score: 0.9851316163889369, Test R2 score: 0.9683303566989079
+[ 2025-03-09 19:32:20,539 ] INFO - Evaluating regression model: CatBoost - <catboost.core.CatBoostRegressor object at 0x149af0920>
+[ 2025-03-09 19:32:36,264 ] INFO - Model: CatBoost, Train R2 score: 0.979707757777826, Test R2 score: 0.9706042576046741
+[ 2025-03-09 19:32:36,265 ] INFO - Regression Model training completed
+[ 2025-03-09 19:32:36,266 ] INFO - Best regression model scores: {'train_r2_score': 0.9798448570903286, 'test_r2_score': 0.9768768616634752, 'best_params': {'learning_rate': 0.1, 'n_estimators': 200}}
+[ 2025-03-09 19:32:36,266 ] INFO - Best regression model name: GradientBoosting
+[ 2025-03-09 19:32:36,266 ] INFO - applying best params: {'learning_rate': 0.1, 'n_estimators': 200} to best regression model: GradientBoosting
+[ 2025-03-09 19:32:36,266 ] INFO - fitting X_train, y_train to best regression model: GradientBoosting
+[ 2025-03-09 19:33:27,681 ] INFO - Writing yaml file to /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/04_Model_Training/models_report/model_report.yaml
+[ 2025-03-09 19:33:27,683 ] INFO - Regression GridSearchCV Models report saved at /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/04_Model_Training/models_report/model_report.yaml
+[ 2025-03-09 19:33:27,683 ] INFO - Saving data as pickle at /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/04_Model_Training/final_model/model.pkl
+[ 2025-03-09 19:33:27,686 ] INFO - Regression Model saved at /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/04_Model_Training/final_model/model.pkl
+[ 2025-03-09 19:33:27,686 ] INFO - Regression Model Training completed successfully
+[ 2025-03-09 19:33:27,690 ] INFO - Starting Model Evaluation
+[ 2025-03-09 19:33:27,690 ] INFO - Reading pickle file from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/04_Model_Training/final_model/model.pkl
+[ 2025-03-09 19:33:27,692 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Cars_Sales_ML_Regression_Project/Artifacts/2025_03_09-19_12_32/03_Data_Transformation/transformed/test.npy
+[ 2025-03-09 19:33:27,720 ] INFO - Model accuracy is: 0.9769094692495904
+[ 2025-03-09 19:33:27,720 ] INFO - Model Evaluation completed successfully
+[ 2025-03-09 19:33:27,721 ] INFO - AWS Upload Started
+[ 2025-03-09 19:33:27,721 ] INFO - Uploading model from local to s3 bucket
+[ 2025-03-09 19:33:27,732 ] INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[ 2025-03-09 19:33:28,277 ] INFO - Uploading drift report from local to s3 bucket
+[ 2025-03-09 19:33:28,398 ] INFO - Uploading preprocessor from local to s3 bucket
+[ 2025-03-09 19:33:28,654 ] INFO - Uploading GridSearchCV models report from local to s3 bucket
+[ 2025-03-09 19:33:28,792 ] INFO - Uploading data schema from local to s3 bucket
+[ 2025-03-09 19:33:29,017 ] INFO - AWS Upload Completed
+[ 2025-03-09 19:33:29,018 ] INFO - AWS Download Started
+[ 2025-03-09 19:33:29,018 ] INFO - Downloading best model from s3 bucket to local for backend
+[ 2025-03-09 19:33:29,184 ] INFO - Downloading preprocessor from s3 bucket to local for backend
+[ 2025-03-09 19:33:29,384 ] INFO - Downloading data schema from s3 bucket for backend
+[ 2025-03-09 19:33:29,537 ] INFO - Downloading data schema from s3 bucket for frontend
+[ 2025-03-09 19:33:29,695 ] INFO - AWS Download Completed
+[ 2025-03-09 19:33:29,695 ] INFO - Main Ended Successfully

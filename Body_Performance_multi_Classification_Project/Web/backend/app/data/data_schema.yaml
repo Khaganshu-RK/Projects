@@ -1,0 +1,38 @@
+columns:
+  age: float64
+  gender: object
+  height_cm: float64
+  weight_kg: float64
+  body fat_%: float64
+  sit-ups counts: float64
+  class: object
+numerical:
+  age:
+    min: 21.0
+    max: 64.0
+    type: float
+  height_cm:
+    min: 125.0
+    max: 193.8
+    type: float
+  weight_kg:
+    min: 26.3
+    max: 138.1
+    type: float
+  body fat_%:
+    min: 3.0
+    max: 78.4
+    type: float
+  sit-ups counts:
+    min: 0.0
+    max: 80.0
+    type: float
+categorical:
+  gender:
+  - M
+  - F
+  class:
+  - C
+  - A
+  - B
+  - D

@@ -1,0 +1,42 @@
+body:
+  drift_found: false
+  p_value: 0.9182745009592584
+color:
+  drift_found: false
+  p_value: 0.7004025910867815
+condition:
+  drift_found: false
+  p_value: 0.718074867743073
+interior:
+  drift_found: false
+  p_value: 0.4419322665716936
+make:
+  drift_found: false
+  p_value: 0.999999869742346
+mfg_year:
+  drift_found: false
+  p_value: 0.9715071060286503
+mmr:
+  drift_found: false
+  p_value: 0.5352312124425798
+model:
+  drift_found: false
+  p_value: 0.6528275761751164
+odometer:
+  drift_found: false
+  p_value: 0.9218925341843157
+sale_year:
+  drift_found: false
+  p_value: 0.9999996741955204
+sellingprice:
+  drift_found: false
+  p_value: 0.4367218040462054
+state:
+  drift_found: false
+  p_value: 0.8590036972652774
+transmission:
+  drift_found: false
+  p_value: 1.0
+trim:
+  drift_found: false
+  p_value: 0.7355841955633826

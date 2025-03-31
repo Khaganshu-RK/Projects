@@ -1,0 +1,114 @@
+columns:
+  Gender: object
+  Customer Type: object
+  Age: int64
+  Type of Travel: object
+  Class: object
+  Flight Distance: int64
+  Inflight wifi service: int64
+  Departure/Arrival time convenient: int64
+  Ease of Online booking: int64
+  Gate location: int64
+  Food and drink: int64
+  Online boarding: int64
+  Seat comfort: int64
+  Inflight entertainment: int64
+  On-board service: int64
+  Leg room service: int64
+  Baggage handling: int64
+  Checkin service: int64
+  Inflight service: int64
+  Cleanliness: int64
+  Departure Delay in Minutes: int64
+  Arrival Delay in Minutes: float64
+  satisfaction: object
+numerical:
+  Age:
+    min: 7
+    max: 85
+    type: int
+  Flight Distance:
+    min: 31
+    max: 4983
+    type: int
+  Inflight wifi service:
+    min: 0
+    max: 5
+    type: int
+  Departure/Arrival time convenient:
+    min: 0
+    max: 5
+    type: int
+  Ease of Online booking:
+    min: 0
+    max: 5
+    type: int
+  Gate location:
+    min: 0
+    max: 5
+    type: int
+  Food and drink:
+    min: 0
+    max: 5
+    type: int
+  Online boarding:
+    min: 0
+    max: 5
+    type: int
+  Seat comfort:
+    min: 0
+    max: 5
+    type: int
+  Inflight entertainment:
+    min: 0
+    max: 5
+    type: int
+  On-board service:
+    min: 0
+    max: 5
+    type: int
+  Leg room service:
+    min: 0
+    max: 5
+    type: int
+  Baggage handling:
+    min: 1
+    max: 5
+    type: int
+  Checkin service:
+    min: 0
+    max: 5
+    type: int
+  Inflight service:
+    min: 0
+    max: 5
+    type: int
+  Cleanliness:
+    min: 0
+    max: 5
+    type: int
+  Departure Delay in Minutes:
+    min: 0
+    max: 1592
+    type: int
+  Arrival Delay in Minutes:
+    min: 0.0
+    max: 1584.0
+    type: float
+categorical:
+  Gender:
+  - Male
+  - Female
+  Customer Type:
+  - Loyal Customer
+  - disloyal Customer
+  Type of Travel:
+  - Personal Travel
+  - Business travel
+  Class:
+  - Eco Plus
+  - Business
+  - Eco
+  satisfaction:
+  - neutral or dissatisfied
+  - satisfied

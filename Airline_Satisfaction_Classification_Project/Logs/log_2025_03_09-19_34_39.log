@@ -1,0 +1,104 @@
+[ 2025-03-09 19:34:40,183 ] INFO - Main started
+[ 2025-03-09 19:34:40,183 ] INFO - Starting Data Ingestion
+[ 2025-03-09 19:34:40,183 ] INFO - Copying file from cleaned_Data.csv to /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/01_Data_Ingestion/feature_store/cleaned_Data.csv
+[ 2025-03-09 19:34:40,188 ] INFO - Reading data from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/01_Data_Ingestion/feature_store/cleaned_Data.csv
+[ 2025-03-09 19:34:40,253 ] INFO - Splitting data into train and test and saving to /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/01_Data_Ingestion/ingested/train.csv and /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/01_Data_Ingestion/ingested/test.csv
+[ 2025-03-09 19:34:40,454 ] INFO - Data Ingestion completed successfully
+[ 2025-03-09 19:34:40,455 ] INFO - Reading yaml file from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Schema/data_schema.yaml
+[ 2025-03-09 19:34:40,457 ] INFO - Starting Data Validation
+[ 2025-03-09 19:34:40,457 ] INFO - Reading csv file from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/01_Data_Ingestion/ingested/test.csv
+[ 2025-03-09 19:34:40,471 ] INFO - Reading csv file from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/01_Data_Ingestion/ingested/train.csv
+[ 2025-03-09 19:34:40,519 ] INFO - Dataframes read successfully
+[ 2025-03-09 19:34:40,519 ] INFO - Validating columns in the dataframe for test
+[ 2025-03-09 19:34:40,519 ] INFO - Columns in the test dataframe are valid as per the schema file, column count is 23
+[ 2025-03-09 19:34:40,519 ] INFO - Validating columns in the dataframe for train
+[ 2025-03-09 19:34:40,519 ] INFO - Columns in the train dataframe are valid as per the schema file, column count is 23
+[ 2025-03-09 19:34:40,519 ] INFO - Detecting drift in the dataframe
+[ 2025-03-09 19:34:41,029 ] INFO - Writing yaml file to /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/02_Data_Validation/drift_report/drift_report.yaml
+[ 2025-03-09 19:34:41,030 ] INFO - Drift report saved at /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/02_Data_Validation/drift_report/drift_report.yaml
+[ 2025-03-09 19:34:41,030 ] INFO - No drift detected in the dataframe
+[ 2025-03-09 19:34:41,031 ] INFO - Drift detection completed
+[ 2025-03-09 19:34:41,031 ] INFO - Data Validation completed successfully
+[ 2025-03-09 19:34:41,234 ] INFO - Starting Data Transformation
+[ 2025-03-09 19:34:41,234 ] INFO - Reading csv file from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/02_Data_Validation/validated/train.csv
+[ 2025-03-09 19:34:41,280 ] INFO - Reading csv file from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/02_Data_Validation/validated/test.csv
+[ 2025-03-09 19:34:41,298 ] INFO - Transforming data
+[ 2025-03-09 19:34:41,298 ] INFO - Encoding the target variable
+[ 2025-03-09 19:34:41,298 ] INFO - Creating the pipeline
+[ 2025-03-09 19:34:41,305 ] INFO - Fitting and transforming the train data
+[ 2025-03-09 19:34:41,962 ] INFO - Transforming the test data
+[ 2025-03-09 19:34:42,155 ] INFO - Saving data as pickle at /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/03_Data_Transformation/transformed_object/target_encoder.pkl
+[ 2025-03-09 19:34:42,158 ] INFO - Saving data as numpy array at /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/03_Data_Transformation/transformed/train.npy
+[ 2025-03-09 19:34:42,161 ] INFO - Saving data as numpy array at /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/03_Data_Transformation/transformed/test.npy
+[ 2025-03-09 19:34:42,162 ] INFO - Saving data as pickle at /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/03_Data_Transformation/transformed_object/input_preprocessor.pkl
+[ 2025-03-09 19:34:42,192 ] INFO - Data Transformation completed successfully
+[ 2025-03-09 19:34:42,204 ] INFO - Starting Model Training
+[ 2025-03-09 19:34:42,204 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/03_Data_Transformation/transformed/train.npy
+[ 2025-03-09 19:34:42,210 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/03_Data_Transformation/transformed/test.npy
+[ 2025-03-09 19:34:42,211 ] INFO - Classification Model training started
+[ 2025-03-09 19:34:42,212 ] INFO - Evaluating classification model: DecisionTree - DecisionTreeClassifier()
+[ 2025-03-09 19:34:44,682 ] INFO - Model: DecisionTree, Train R2 score: 0.7923821622766372, Test R2 score: 0.7738249881719349, Test accuracy: 0.9443722631249699, Test f1 score: 0.9349538600045014, Test precision score: 0.9545036764705882, Test recall score: 0.9161887957653286
+[ 2025-03-09 19:34:44,682 ] INFO - Evaluating classification model: RandomForest - RandomForestClassifier()
+[ 2025-03-09 19:35:04,572 ] INFO - Model: RandomForest, Train R2 score: 0.7962051536228181, Test R2 score: 0.785172869388222, Test accuracy: 0.9471632741446514, Test f1 score: 0.939006777024775, Test precision score: 0.9460488023281844, Test recall score: 0.9320688134097926
+[ 2025-03-09 19:35:04,573 ] INFO - Evaluating classification model: LogisticRegression - LogisticRegression()
+[ 2025-03-09 19:35:05,040 ] INFO - Model: LogisticRegression, Train R2 score: 0.48943460444658404, Test R2 score: 0.497562776492672, Test accuracy: 0.8764255810596218, Test f1 score: 0.8555355535553555, Test precision score: 0.8732200275608636, Test recall score: 0.8385531539479488
+[ 2025-03-09 19:35:05,040 ] INFO - Evaluating classification model: KNeighbors - KNeighborsClassifier()
+[ 2025-03-09 19:35:14,020 ] INFO - Model: KNeighbors, Train R2 score: 0.7710126209056773, Test R2 score: 0.7163029695928249, Test accuracy: 0.930224724507964, Test f1 score: 0.9172846548773531, Test precision score: 0.9501299929094776, Test recall score: 0.8866343184825761
+[ 2025-03-09 19:35:14,021 ] INFO - Evaluating classification model: SVC - SVC()
+[ 2025-03-09 19:37:42,622 ] INFO - Model: SVC, Train R2 score: 0.8789876200805046, Test R2 score: 0.8278252505115076, Test accuracy: 0.9576536259082816, Test f1 score: 0.9507002801120448, Test precision score: 0.9661808244135732, Test recall score: 0.9357079841199824
+[ 2025-03-09 19:37:42,624 ] INFO - Evaluating classification model: XGBoost - XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=None, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...)
+[ 2025-03-09 19:37:44,393 ] INFO - Model: XGBoost, Train R2 score: 0.9047683053124425, Test R2 score: 0.8442601129626819, Test accuracy: 0.9616957797988547, Test f1 score: 0.9554610564010743, Test precision score: 0.969786460699682, Test recall score: 0.9415527128363476
+[ 2025-03-09 19:37:44,393 ] INFO - Evaluating classification model: CatBoost - <catboost.core.CatBoostClassifier object at 0x14ab9ca40>
+[ 2025-03-09 19:37:51,405 ] INFO - Model: CatBoost, Train R2 score: 0.8972693607487798, Test R2 score: 0.8462166442068693, Test accuracy: 0.9621769885953515, Test f1 score: 0.9560501006486245, Test precision score: 0.9697141560798548, Test recall score: 0.9427657697397441
+[ 2025-03-09 19:37:51,406 ] INFO - Evaluating classification model: GaussianNB - GaussianNB()
+[ 2025-03-09 19:37:51,659 ] INFO - Model: GaussianNB, Train R2 score: 0.3804793510804283, Test R2 score: 0.3789969830949147, Test accuracy: 0.8472643279919156, Test f1 score: 0.8231754874651811, Test precision score: 0.8317946408466561, Test recall score: 0.8147331274812527
+[ 2025-03-09 19:37:51,660 ] INFO - Evaluating classification model: AdaBoost - AdaBoostClassifier()
+[ 2025-03-09 19:38:03,557 ] INFO - Model: AdaBoost, Train R2 score: 0.6614202023151581, Test R2 score: 0.6517374385346403, Test accuracy: 0.9143448342235696, Test f1 score: 0.9002018389773492, Test precision score: 0.9156021897810219, Test recall score: 0.8853109836788707
+[ 2025-03-09 19:38:03,558 ] INFO - Evaluating classification model: GradientBoosting - GradientBoostingClassifier()
+[ 2025-03-09 19:38:57,682 ] INFO - Model: GradientBoosting, Train R2 score: 0.8619311971513898, Test R2 score: 0.8319339661243011, Test accuracy: 0.9586641643809248, Test f1 score: 0.9520084920945304, Test precision score: 0.9647831502661081, Test recall score: 0.9395677106307896
+[ 2025-03-09 19:38:57,683 ] INFO - Classification Model training completed
+[ 2025-03-09 19:38:57,683 ] INFO - Best classification model scores: {'train_r2_score': 0.8972693607487798, 'test_r2_score': 0.8462166442068693, 'test_accuracy': 0.9621769885953515, 'test_confusion_matrix': array([[11446,   267],
+       [  519,  8549]]), 'test_f1_score': 0.9560501006486245, 'test_precision_score': 0.9697141560798548, 'test_recall_score': 0.9427657697397441, 'best_params': {'depth': 6, 'iterations': 200}}
+[ 2025-03-09 19:38:57,683 ] INFO - Best classification model name: CatBoost
+[ 2025-03-09 19:38:57,683 ] INFO - applying best params: {'depth': 6, 'iterations': 200} to best classification model: CatBoost
+[ 2025-03-09 19:38:57,683 ] INFO - fitting X_train, y_train to best classification model: CatBoost
+[ 2025-03-09 19:38:58,958 ] INFO - Writing yaml file to /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/04_Model_Training/models_report/model_report.yaml
+[ 2025-03-09 19:38:58,961 ] INFO - Classification GridSearchCV Models report saved at /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/04_Model_Training/models_report/model_report.yaml
+[ 2025-03-09 19:38:58,961 ] INFO - Saving data as pickle at /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/04_Model_Training/final_model/model.pkl
+[ 2025-03-09 19:38:58,962 ] INFO - Classification Model saved at /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/04_Model_Training/final_model/model.pkl
+[ 2025-03-09 19:38:58,962 ] INFO - Classification Model Training completed successfully
+[ 2025-03-09 19:38:58,963 ] INFO - Starting Model Evaluation
+[ 2025-03-09 19:38:58,963 ] INFO - Reading pickle file from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/04_Model_Training/final_model/model.pkl
+[ 2025-03-09 19:38:58,963 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Airline_Satisfaction_Classification_Project/Artifacts/2025_03_09-19_34_40/03_Data_Transformation/transformed/test.npy
+[ 2025-03-09 19:38:59,030 ] INFO - Model accuracy is: 0.9621769885953515
+[ 2025-03-09 19:38:59,030 ] INFO - Model precision is: 0.9697141560798548
+[ 2025-03-09 19:38:59,030 ] INFO - Model recall is: 0.9427657697397441
+[ 2025-03-09 19:38:59,030 ] INFO - Model f1 score is: 0.9560501006486245
+[ 2025-03-09 19:38:59,030 ] INFO - Model Evaluation completed successfully
+[ 2025-03-09 19:38:59,030 ] INFO - AWS Upload Started
+[ 2025-03-09 19:38:59,030 ] INFO - Uploading model from local to s3 bucket
+[ 2025-03-09 19:38:59,037 ] INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[ 2025-03-09 19:38:59,457 ] INFO - Uploading drift report from local to s3 bucket
+[ 2025-03-09 19:38:59,623 ] INFO - Uploading preprocessor from local to s3 bucket
+[ 2025-03-09 19:39:00,638 ] INFO - Uploading GridSearchCV models report from local to s3 bucket
+[ 2025-03-09 19:39:00,774 ] INFO - Uploading data schema from local to s3 bucket
+[ 2025-03-09 19:39:00,884 ] INFO - Uploading target encoder from local to s3 bucket
+[ 2025-03-09 19:39:01,012 ] INFO - AWS Upload Completed
+[ 2025-03-09 19:39:01,012 ] INFO - AWS Download Started
+[ 2025-03-09 19:39:01,012 ] INFO - Downloading best model from s3 bucket to local for backend
+[ 2025-03-09 19:39:01,184 ] INFO - Downloading preprocessor from s3 bucket to local for backend
+[ 2025-03-09 19:39:02,267 ] INFO - Downloading data schema from s3 bucket for backend
+[ 2025-03-09 19:39:02,434 ] INFO - Downloading data schema from s3 bucket for frontend
+[ 2025-03-09 19:39:02,552 ] INFO - Downloading target encoder from s3 bucket to local for backend
+[ 2025-03-09 19:39:02,678 ] INFO - AWS Download Completed
+[ 2025-03-09 19:39:02,678 ] INFO - Main Ended Successfully

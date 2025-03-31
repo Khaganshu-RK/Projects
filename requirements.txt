@@ -18,3 +18,10 @@ uvicorn
 boto3
 opencv-python
 python-multipart
+pymongo
+psycopg2-binary
+sqlalchemy
+apache-airflow
+kafka-python
+confluent-kafka
+apache-airflow-providers-postgres

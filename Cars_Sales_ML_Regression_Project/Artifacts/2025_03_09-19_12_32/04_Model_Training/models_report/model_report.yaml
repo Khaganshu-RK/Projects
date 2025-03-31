@@ -1,0 +1,61 @@
+AdaBoost:
+  best_params:
+    learning_rate: 0.1
+    n_estimators: 50
+  test_r2_score: 0.9491261649893944
+  train_r2_score: 0.9521850946926582
+CatBoost:
+  best_params:
+    depth: 6
+    iterations: 200
+  test_r2_score: 0.9706042576046741
+  train_r2_score: 0.979707757777826
+DecisionTree:
+  best_params:
+    max_depth: 10
+  test_r2_score: 0.9679425439022781
+  train_r2_score: 0.9824519683667223
+ElasticNet:
+  best_params:
+    alpha: 0.1
+    l1_ratio: 0.5
+  test_r2_score: 0.9672842990502536
+  train_r2_score: 0.9665402757720014
+GradientBoosting:
+  best_params:
+    learning_rate: 0.1
+    n_estimators: 200
+  test_r2_score: 0.9768768616634752
+  train_r2_score: 0.9798448570903286
+KNeighbors:
+  best_params:
+    n_neighbors: 7
+  test_r2_score: 0.9252511374286903
+  train_r2_score: 0.9465019854696566
+LinearRegression:
+  best_params: {}
+  test_r2_score: 0.9683391417463867
+  train_r2_score: 0.9737526163658283
+RandomForest:
+  best_params:
+    max_depth: 20
+    n_estimators: 200
+  test_r2_score: 0.974078789086694
+  train_r2_score: 0.9938619500413136
+Ridge:
+  best_params:
+    alpha: 1.0
+  test_r2_score: 0.9697362153668851
+  train_r2_score: 0.9733839872191942
+SVR:
+  best_params:
+    C: 10
+    kernel: rbf
+  test_r2_score: 0.5491238002974077
+  train_r2_score: 0.4911863914205792
+XGBoost:
+  best_params:
+    max_depth: 6
+    n_estimators: 100
+  test_r2_score: 0.9683303566989079
+  train_r2_score: 0.9851316163889369

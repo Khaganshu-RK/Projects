@@ -1,0 +1,69 @@
+Age:
+  drift_found: false
+  p_value: 0.1523040677122981
+Arrival Delay in Minutes:
+  drift_found: false
+  p_value: 0.5961715317331008
+Baggage handling:
+  drift_found: false
+  p_value: 0.9073710540047455
+Checkin service:
+  drift_found: false
+  p_value: 0.9839800934038192
+Class:
+  drift_found: false
+  p_value: 0.6223586868364446
+Cleanliness:
+  drift_found: false
+  p_value: 0.15212334541908734
+Customer Type:
+  drift_found: false
+  p_value: 1.0
+Departure Delay in Minutes:
+  drift_found: false
+  p_value: 0.591624280466748
+Departure/Arrival time convenient:
+  drift_found: false
+  p_value: 0.8675793187473306
+Ease of Online booking:
+  drift_found: false
+  p_value: 0.9964109112336343
+Flight Distance:
+  drift_found: false
+  p_value: 0.8638568317251303
+Food and drink:
+  drift_found: false
+  p_value: 0.7461602130859044
+Gate location:
+  drift_found: false
+  p_value: 0.9924752394309955
+Gender:
+  drift_found: false
+  p_value: 0.8056156236139357
+Inflight entertainment:
+  drift_found: false
+  p_value: 0.22395487212723275
+Inflight service:
+  drift_found: false
+  p_value: 0.6515006903504044
+Inflight wifi service:
+  drift_found: false
+  p_value: 0.9984996120824888
+Leg room service:
+  drift_found: false
+  p_value: 0.17011163376572647
+On-board service:
+  drift_found: false
+  p_value: 0.999877271560746
+Online boarding:
+  drift_found: false
+  p_value: 0.5578519632107375
+Seat comfort:
+  drift_found: false
+  p_value: 0.1646495444440741
+Type of Travel:
+  drift_found: false
+  p_value: 0.9982165511926113
+satisfaction:
+  drift_found: false
+  p_value: 0.970420464409389

@@ -1,0 +1,21 @@
+age:
+  drift_found: false
+  p_value: 0.5638635467431985
+body fat_%:
+  drift_found: false
+  p_value: 0.6967484701889928
+class:
+  drift_found: false
+  p_value: 0.9998818808668091
+gender:
+  drift_found: false
+  p_value: 0.8982842470489909
+height_cm:
+  drift_found: false
+  p_value: 0.056222375862170826
+sit-ups counts:
+  drift_found: false
+  p_value: 0.5435217660959887
+weight_kg:
+  drift_found: false
+  p_value: 0.7429088234991224

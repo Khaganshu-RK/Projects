@@ -1,0 +1,271 @@
+AdaBoost:
+  best_params:
+    learning_rate: 0.5
+    n_estimators: 100
+  test_accuracy: 0.48226950354609927
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - &id001 !!python/name:numpy.ndarray ''
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - &id002 !!python/object/apply:numpy.dtype
+      args:
+      - i8
+      - false
+      - true
+      state: !!python/tuple
+      - 3
+      - <
+      - null
+      - null
+      - null
+      - -1
+      - -1
+      - 0
+    - false
+    - !!binary |
+      ogEAAAAAAADUAAAAAAAAAC8AAAAAAAAACAAAAAAAAADaAAAAAAAAANgAAAAAAAAAsAAAAAAAAAA0
+      AAAAAAAAAIAAAAAAAAAAnAAAAAAAAAARAQAAAAAAAF0AAAAAAAAAMgAAAAAAAAA/AAAAAAAAALgA
+      AAAAAAAAgQEAAAAAAAA=
+  test_f1_score: 0.48442998088093825
+  test_precision_score: 0.4933813714903004
+  test_recall_score: 0.48226950354609927
+CatBoost:
+  best_params:
+    depth: 4
+    iterations: 200
+  test_accuracy: 0.5752146323254946
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      7wEAAAAAAACXAAAAAAAAACIAAAAAAAAABQAAAAAAAADeAAAAAAAAAOsAAAAAAAAApAAAAAAAAAAp
+      AAAAAAAAAHAAAAAAAAAAmgAAAAAAAABKAQAAAAAAADYAAAAAAAAAHAAAAAAAAAA/AAAAAAAAAG4A
+      AAAAAAAA4QEAAAAAAAA=
+  test_f1_score: 0.5742014808200175
+  test_precision_score: 0.5802425846564568
+  test_recall_score: 0.5752146323254946
+DecisionTree:
+  best_params:
+    criterion: gini
+    max_depth: 10
+  test_accuracy: 0.5502053004852557
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      8gEAAAAAAAB3AAAAAAAAADwAAAAAAAAACAAAAAAAAAD2AAAAAAAAAOYAAAAAAAAAmgAAAAAAAAAg
+      AAAAAAAAAIIAAAAAAAAAoAAAAAAAAABAAQAAAAAAACgAAAAAAAAAJgAAAAAAAABNAAAAAAAAAI0A
+      AAAAAAAAqgEAAAAAAAA=
+  test_f1_score: 0.5503147856956009
+  test_precision_score: 0.5659565006939311
+  test_recall_score: 0.5502053004852557
+GaussianNB:
+  best_params: {}
+  test_accuracy: 0.4576334453154162
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      uwEAAAAAAACRAAAAAAAAADcAAAAAAAAAKgAAAAAAAAD/AAAAAAAAAKoAAAAAAAAAfAAAAAAAAABx
+      AAAAAAAAAJsAAAAAAAAAjgAAAAAAAADIAAAAAAAAAJkAAAAAAAAAMAAAAAAAAAA2AAAAAAAAAKcA
+      AAAAAAAAnQEAAAAAAAA=
+  test_f1_score: 0.4454878873406122
+  test_precision_score: 0.4426234670209938
+  test_recall_score: 0.4576334453154162
+GradientBoosting:
+  best_params:
+    learning_rate: 0.1
+    n_estimators: 200
+  test_accuracy: 0.5774542739828294
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      8AEAAAAAAACTAAAAAAAAACcAAAAAAAAAAwAAAAAAAADeAAAAAAAAAO0AAAAAAAAApgAAAAAAAAAl
+      AAAAAAAAAHIAAAAAAAAAmwAAAAAAAABPAQAAAAAAAC4AAAAAAAAAGgAAAAAAAAA+AAAAAAAAAHMA
+      AAAAAAAA3wEAAAAAAAA=
+  test_f1_score: 0.5772654517456816
+  test_precision_score: 0.5851733792499492
+  test_recall_score: 0.5774542739828294
+KNeighbors:
+  best_params:
+    n_neighbors: 7
+  test_accuracy: 0.5397536394176932
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      2AEAAAAAAACcAAAAAAAAAC8AAAAAAAAACgAAAAAAAAD6AAAAAAAAAPQAAAAAAAAAhAAAAAAAAAAk
+      AAAAAAAAAIcAAAAAAAAAsQAAAAAAAAAdAQAAAAAAADUAAAAAAAAAMQAAAAAAAABEAAAAAAAAAHgA
+      AAAAAAAAvQEAAAAAAAA=
+  test_f1_score: 0.5408520785128563
+  test_precision_score: 0.5533375451424587
+  test_recall_score: 0.5397536394176932
+LogisticRegression:
+  best_params:
+    C: 0.1
+    solver: lbfgs
+  test_accuracy: 0.5173572228443449
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      uwEAAAAAAAC7AAAAAAAAADMAAAAAAAAABAAAAAAAAADKAAAAAAAAALYAAAAAAAAA0QAAAAAAAABF
+      AAAAAAAAAGoAAAAAAAAAfQAAAAAAAAABAQAAAAAAAKIAAAAAAAAAGgAAAAAAAAA+AAAAAAAAAFoA
+      AAAAAAAA+AEAAAAAAAA=
+  test_f1_score: 0.508599110836093
+  test_precision_score: 0.5030147793274827
+  test_recall_score: 0.5173572228443449
+RandomForest:
+  best_params:
+    criterion: gini
+    max_depth: 10
+    n_estimators: 200
+  test_accuracy: 0.5830533781261665
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      CgIAAAAAAABvAAAAAAAAACkAAAAAAAAACwAAAAAAAADqAAAAAAAAANAAAAAAAAAAswAAAAAAAAAp
+      AAAAAAAAAHgAAAAAAAAAgAAAAAAAAABfAQAAAAAAADMAAAAAAAAAHAAAAAAAAAA3AAAAAAAAAHYA
+      AAAAAAAA4QEAAAAAAAA=
+  test_f1_score: 0.576953419553584
+  test_precision_score: 0.5833089529718989
+  test_recall_score: 0.5830533781261665
+SVC:
+  best_params:
+    C: 10
+    kernel: rbf
+  test_accuracy: 0.5666293393057111
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      DAIAAAAAAACLAAAAAAAAABIAAAAAAAAABAAAAAAAAAAJAQAAAAAAAPAAAAAAAAAAggAAAAAAAAAb
+      AAAAAAAAAJAAAAAAAAAAqgAAAAAAAAAvAQAAAAAAACEAAAAAAAAAJgAAAAAAAABHAAAAAAAAAHoA
+      AAAAAAAAwwEAAAAAAAA=
+  test_f1_score: 0.5663917359051609
+  test_precision_score: 0.5848757327831444
+  test_recall_score: 0.5666293393057111
+XGBoost:
+  best_params:
+    max_depth: 3
+    n_estimators: 100
+  test_accuracy: 0.5804404628592759
+  test_confusion_matrix: !!python/object/apply:numpy.core.multiarray._reconstruct
+    args:
+    - *id001
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 4
+      - 4
+    - *id002
+    - false
+    - !!binary |
+      BQIAAAAAAAB+AAAAAAAAACQAAAAAAAAABgAAAAAAAAD3AAAAAAAAAMgAAAAAAAAAtQAAAAAAAAAi
+      AAAAAAAAAHUAAAAAAAAAhQAAAAAAAABkAQAAAAAAACwAAAAAAAAAHgAAAAAAAABBAAAAAAAAAGkA
+      AAAAAAAA4gEAAAAAAAA=
+  test_f1_score: 0.5757213458809666
+  test_precision_score: 0.5836122741815978
+  test_recall_score: 0.5804404628592759

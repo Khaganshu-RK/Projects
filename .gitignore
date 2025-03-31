@@ -56,7 +56,7 @@ cover/
 *.pot
 
 # Django stuff:
-*.log
+# *.log
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -174,9 +174,13 @@ cython_debug/
 .pypirc
 
 # Project Specific
-logs/
-artifacts/
+# logs/
+# artifacts/
 .DS_Store
 catboost_info/
 CNN_Project/data/
-Data/
+# Data/
+*.npy
+*.csv
+*.h5
+*.pkl

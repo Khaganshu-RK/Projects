@@ -1,0 +1,16 @@
+version: "3.1"
+
+services:
+  postgres:
+    image: postgres:17
+    container_name: postgres_db
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    networks:
+      - airflow_network
+
+
+networks:
+  airflow_network:

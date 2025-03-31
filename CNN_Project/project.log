@@ -1,0 +1,17 @@
+2025-03-09 07:43:40 - INFO - Training model
+2025-03-09 07:43:40 - INFO - Getting data
+2025-03-09 07:43:40 - INFO - Loading data
+2025-03-09 07:43:46 - INFO - Converting data to numpy array
+2025-03-09 07:43:52 - INFO - Saving data
+2025-03-09 07:43:55 - INFO - Splitting data
+2025-03-09 07:43:57 - INFO - Converting data to categorical
+2025-03-09 07:43:58 - INFO - Setting up model
+2025-03-09 07:43:58 - INFO - Setting up callbacks
+2025-03-09 07:43:58 - INFO - Fitting/Training model
+2025-03-09 08:04:38 - INFO - Saving model
+2025-03-09 08:04:38 - INFO - AWS Upload Started
+2025-03-09 08:04:38 - INFO - Found credentials in shared credentials file: ~/.aws/credentials
+2025-03-09 08:04:39 - INFO - AWS Upload Completed
+2025-03-09 08:04:39 - INFO - AWS Download Started
+2025-03-09 08:04:40 - INFO - AWS Download Completed
+2025-03-09 08:06:20 - INFO - Training model

@@ -1,0 +1,134 @@
+[ 2025-03-31 23:06:54,102 ] INFO - Main started
+[ 2025-03-31 23:06:54,102 ] INFO - Starting Data Ingestion
+[ 2025-03-31 23:06:54,102 ] INFO - Reading data from MongoDB and PostgreSQL
+[ 2025-03-31 23:06:54,288 ] INFO - Connected to MongoDB DB: Database(MongoClient(host=['cluster0-shard-00-01.pygyg.mongodb.net:27017', 'cluster0-shard-00-02.pygyg.mongodb.net:27017', 'cluster0-shard-00-00.pygyg.mongodb.net:27017'], document_class=dict, tz_aware=False, connect=True, retrywrites=True, w='majority', appname='Cluster0', authsource='admin', replicaset='atlas-p6v47c-shard-0', tls=True), 'Body_Performance') and collection: Collection(Database(MongoClient(host=['cluster0-shard-00-01.pygyg.mongodb.net:27017', 'cluster0-shard-00-02.pygyg.mongodb.net:27017', 'cluster0-shard-00-00.pygyg.mongodb.net:27017'], document_class=dict, tz_aware=False, connect=True, retrywrites=True, w='majority', appname='Cluster0', authsource='admin', replicaset='atlas-p6v47c-shard-0', tls=True), 'Body_Performance'), 'Body_Performance')
+[ 2025-03-31 23:06:54,843 ] INFO - Reading data from PostgreSQL
+[ 2025-03-31 23:06:54,894 ] INFO - Concatenating data from MongoDB and PostgreSQL
+[ 2025-03-31 23:06:54,922 ] INFO - Splitting data into train and test and saving to /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/01_Data_Ingestion/ingested/train.csv and /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/01_Data_Ingestion/ingested/test.csv
+[ 2025-03-31 23:06:54,939 ] INFO - Data Ingestion completed successfully
+[ 2025-03-31 23:06:54,940 ] INFO - Reading yaml file from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Schema/data_schema.yaml
+[ 2025-03-31 23:06:54,941 ] INFO - Starting Data Validation
+[ 2025-03-31 23:06:54,941 ] INFO - Reading csv file from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/01_Data_Ingestion/ingested/test.csv
+[ 2025-03-31 23:06:54,942 ] INFO - Reading csv file from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/01_Data_Ingestion/ingested/train.csv
+[ 2025-03-31 23:06:54,944 ] INFO - Dataframes read successfully
+[ 2025-03-31 23:06:54,944 ] INFO - Validating columns in the dataframe for test
+[ 2025-03-31 23:06:54,944 ] INFO - Columns in the test dataframe are valid as per the schema file, column count is 7
+[ 2025-03-31 23:06:54,944 ] INFO - Validating columns in the dataframe for train
+[ 2025-03-31 23:06:54,944 ] INFO - Columns in the train dataframe are valid as per the schema file, column count is 7
+[ 2025-03-31 23:06:54,944 ] INFO - Detecting drift in the dataframe
+[ 2025-03-31 23:06:54,984 ] INFO - Writing yaml file to /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/02_Data_Validation/drift_report/drift_report.yaml
+[ 2025-03-31 23:06:54,985 ] INFO - Drift report saved at /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/02_Data_Validation/drift_report/drift_report.yaml
+[ 2025-03-31 23:06:54,985 ] INFO - No drift detected in the dataframe
+[ 2025-03-31 23:06:54,985 ] INFO - Drift detection completed
+[ 2025-03-31 23:06:54,985 ] INFO - Data Validation completed successfully
+[ 2025-03-31 23:06:55,001 ] INFO - Starting Data Transformation
+[ 2025-03-31 23:06:55,001 ] INFO - Reading csv file from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/02_Data_Validation/validated/train.csv
+[ 2025-03-31 23:06:55,003 ] INFO - Reading csv file from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/02_Data_Validation/validated/test.csv
+[ 2025-03-31 23:06:55,004 ] INFO - Transforming data
+[ 2025-03-31 23:06:55,004 ] INFO - Encoding the target variable
+[ 2025-03-31 23:06:55,004 ] INFO - Creating the pipeline
+[ 2025-03-31 23:06:55,005 ] INFO - Fitting and transforming the train data
+[ 2025-03-31 23:06:55,010 ] INFO - Transforming the test data
+[ 2025-03-31 23:06:55,012 ] INFO - Saving data as pickle at /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/03_Data_Transformation/transformed_object/target_encoder.pkl
+[ 2025-03-31 23:06:55,012 ] INFO - Saving data as numpy array at /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/03_Data_Transformation/transformed/train.npy
+[ 2025-03-31 23:06:55,013 ] INFO - Saving data as numpy array at /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/03_Data_Transformation/transformed/test.npy
+[ 2025-03-31 23:06:55,013 ] INFO - Saving data as pickle at /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/03_Data_Transformation/transformed_object/input_preprocessor.pkl
+[ 2025-03-31 23:06:55,014 ] INFO - Data Transformation completed successfully
+[ 2025-03-31 23:06:55,015 ] INFO - Starting Model Training
+[ 2025-03-31 23:06:55,015 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/03_Data_Transformation/transformed/train.npy
+[ 2025-03-31 23:06:55,015 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/03_Data_Transformation/transformed/test.npy
+[ 2025-03-31 23:06:55,015 ] INFO - Classification Model training started
+[ 2025-03-31 23:06:55,016 ] INFO - Evaluating classification model: DecisionTree - DecisionTreeClassifier()
+[ 2025-03-31 23:06:57,264 ] INFO - Model: DecisionTree, Test accuracy: 0.5502053004852557, Test confusion matrix: [[498 119  60   8]
+ [246 230 154  32]
+ [130 160 320  40]
+ [ 38  77 141 426]], Test f1 score: 0.5503147856956009, Test precision score: 0.5659565006939311, Test recall score: 0.5502053004852557
+[ 2025-03-31 23:06:57,264 ] INFO - Evaluating classification model: RandomForest - RandomForestClassifier()
+[ 2025-03-31 23:07:00,501 ] INFO - Model: RandomForest, Test accuracy: 0.5830533781261665, Test confusion matrix: [[522 111  41  11]
+ [234 208 179  41]
+ [120 128 351  51]
+ [ 28  55 118 481]], Test f1 score: 0.576953419553584, Test precision score: 0.5833089529718989, Test recall score: 0.5830533781261665
+[ 2025-03-31 23:07:00,502 ] INFO - Evaluating classification model: LogisticRegression - LogisticRegression()
+[ 2025-03-31 23:07:01,178 ] INFO - Model: LogisticRegression, Test accuracy: 0.5173572228443449, Test confusion matrix: [[443 187  51   4]
+ [202 182 209  69]
+ [106 125 257 162]
+ [ 26  62  90 504]], Test f1 score: 0.508599110836093, Test precision score: 0.5030147793274827, Test recall score: 0.5173572228443449
+[ 2025-03-31 23:07:01,178 ] INFO - Evaluating classification model: KNeighbors - KNeighborsClassifier()
+[ 2025-03-31 23:07:01,595 ] INFO - Model: KNeighbors, Test accuracy: 0.5397536394176932, Test confusion matrix: [[472 156  47  10]
+ [250 244 132  36]
+ [135 177 285  53]
+ [ 49  68 120 445]], Test f1 score: 0.5408520785128563, Test precision score: 0.5533375451424587, Test recall score: 0.5397536394176932
+[ 2025-03-31 23:07:01,595 ] INFO - Evaluating classification model: SVC - SVC(probability=True)
+[ 2025-03-31 23:07:21,748 ] INFO - Model: SVC, Test accuracy: 0.5666293393057111, Test confusion matrix: [[524 139  18   4]
+ [265 240 130  27]
+ [144 170 303  33]
+ [ 38  71 122 451]], Test f1 score: 0.5663917359051609, Test precision score: 0.5848757327831444, Test recall score: 0.5666293393057111
+[ 2025-03-31 23:07:21,749 ] INFO - Evaluating classification model: XGBoost - XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric='mlogloss',
+              feature_types=None, gamma=None, grow_policy=None,
+              importance_type=None, interaction_constraints=None,
+              learning_rate=None, max_bin=None, max_cat_threshold=None,
+              max_cat_to_onehot=None, max_delta_step=None, max_depth=None,
+              max_leaves=None, min_child_weight=None, missing=nan,
+              monotone_constraints=None, multi_strategy=None, n_estimators=None,
+              n_jobs=None, num_parallel_tree=None, random_state=None, ...)
+[ 2025-03-31 23:07:22,812 ] INFO - Model: XGBoost, Test accuracy: 0.5804404628592759, Test confusion matrix: [[517 126  36   6]
+ [247 200 181  34]
+ [117 133 356  44]
+ [ 30  65 105 482]], Test f1 score: 0.5757213458809666, Test precision score: 0.5836122741815978, Test recall score: 0.5804404628592759
+[ 2025-03-31 23:07:22,812 ] INFO - Evaluating classification model: CatBoost - <catboost.core.CatBoostClassifier object at 0x169a77350>
+[ 2025-03-31 23:07:24,444 ] INFO - Model: CatBoost, Test accuracy: 0.5752146323254946, Test confusion matrix: [[495 151  34   5]
+ [222 235 164  41]
+ [112 154 330  54]
+ [ 28  63 110 481]], Test f1 score: 0.5742014808200175, Test precision score: 0.5802425846564568, Test recall score: 0.5752146323254946
+[ 2025-03-31 23:07:24,444 ] INFO - Evaluating classification model: GaussianNB - GaussianNB()
+[ 2025-03-31 23:07:24,467 ] INFO - Model: GaussianNB, Test accuracy: 0.4576334453154162, Test confusion matrix: [[443 145  55  42]
+ [255 170 124 113]
+ [155 142 200 153]
+ [ 48  54 167 413]], Test f1 score: 0.4454878873406122, Test precision score: 0.4426234670209938, Test recall score: 0.4576334453154162
+[ 2025-03-31 23:07:24,467 ] INFO - Evaluating classification model: AdaBoost - AdaBoostClassifier()
+[ 2025-03-31 23:07:25,493 ] INFO - Model: AdaBoost, Test accuracy: 0.48226950354609927, Test confusion matrix: [[418 212  47   8]
+ [218 216 176  52]
+ [128 156 273  93]
+ [ 50  63 184 385]], Test f1 score: 0.48442998088093825, Test precision score: 0.4933813714903004, Test recall score: 0.48226950354609927
+[ 2025-03-31 23:07:25,493 ] INFO - Evaluating classification model: GradientBoosting - GradientBoostingClassifier()
+[ 2025-03-31 23:07:41,304 ] INFO - Model: GradientBoosting, Test accuracy: 0.5774542739828294, Test confusion matrix: [[496 147  39   3]
+ [222 237 166  37]
+ [114 155 335  46]
+ [ 26  62 115 479]], Test f1 score: 0.5772654517456816, Test precision score: 0.5851733792499492, Test recall score: 0.5774542739828294
+[ 2025-03-31 23:07:41,305 ] INFO - Classification Model training completed
+[ 2025-03-31 23:07:41,305 ] INFO - Best classification model scores: {'test_accuracy': 0.5774542739828294, 'test_confusion_matrix': array([[496, 147,  39,   3],
+       [222, 237, 166,  37],
+       [114, 155, 335,  46],
+       [ 26,  62, 115, 479]]), 'test_f1_score': 0.5772654517456816, 'test_precision_score': 0.5851733792499492, 'test_recall_score': 0.5774542739828294, 'best_params': {'learning_rate': 0.1, 'n_estimators': 200}}
+[ 2025-03-31 23:07:41,305 ] INFO - Best classification model name: GradientBoosting
+[ 2025-03-31 23:07:41,305 ] INFO - applying best params: {'learning_rate': 0.1, 'n_estimators': 200} to best classification model: GradientBoosting
+[ 2025-03-31 23:07:41,305 ] INFO - fitting X_train, y_train to best classification model: GradientBoosting
+[ 2025-03-31 23:07:46,154 ] INFO - Writing yaml file to /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/04_Model_Training/models_report/model_report.yaml
+[ 2025-03-31 23:07:46,157 ] INFO - Classification GridSearchCV Models report saved at /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/04_Model_Training/models_report/model_report.yaml
+[ 2025-03-31 23:07:46,157 ] INFO - Saving data as pickle at /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/04_Model_Training/final_model/model.pkl
+[ 2025-03-31 23:07:46,164 ] INFO - Classification Model saved at /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/04_Model_Training/final_model/model.pkl
+[ 2025-03-31 23:07:46,164 ] INFO - Classification Model Training completed successfully
+[ 2025-03-31 23:07:46,164 ] INFO - Starting Model Evaluation
+[ 2025-03-31 23:07:46,164 ] INFO - Reading pickle file from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/04_Model_Training/final_model/model.pkl
+[ 2025-03-31 23:07:46,215 ] INFO - Reading numpy array from /Users/khaganshu/Projects/Body_Performance_multi_Classification_Project/Artifacts/2025_03_31-23_06_54/03_Data_Transformation/transformed/test.npy
+[ 2025-03-31 23:07:46,235 ] ERROR - Model accuracy is less than expected accuracy threshold of 0.6
+[ 2025-03-31 23:07:46,235 ] INFO - AWS Upload Started
+[ 2025-03-31 23:07:46,235 ] INFO - Uploading model from local to s3 bucket
+[ 2025-03-31 23:07:46,240 ] INFO - Found credentials in shared credentials file: ~/.aws/credentials
+[ 2025-03-31 23:07:46,727 ] INFO - Uploading drift report from local to s3 bucket
+[ 2025-03-31 23:07:46,880 ] INFO - Uploading preprocessor from local to s3 bucket
+[ 2025-03-31 23:07:47,144 ] INFO - Uploading GridSearchCV models report from local to s3 bucket
+[ 2025-03-31 23:07:47,262 ] INFO - Uploading data schema from local to s3 bucket
+[ 2025-03-31 23:07:47,357 ] INFO - Uploading target encoder from local to s3 bucket
+[ 2025-03-31 23:07:47,465 ] INFO - AWS Upload Completed
+[ 2025-03-31 23:07:47,465 ] INFO - AWS Download Started
+[ 2025-03-31 23:07:47,465 ] INFO - Downloading best model from s3 bucket to local for backend
+[ 2025-03-31 23:07:47,693 ] INFO - Downloading preprocessor from s3 bucket to local for backend
+[ 2025-03-31 23:07:47,867 ] INFO - Downloading data schema from s3 bucket for backend
+[ 2025-03-31 23:07:47,989 ] INFO - Downloading data schema from s3 bucket for frontend
+[ 2025-03-31 23:07:48,083 ] INFO - Downloading target encoder from s3 bucket to local for backend
+[ 2025-03-31 23:07:48,196 ] INFO - AWS Download Completed
+[ 2025-03-31 23:07:48,197 ] INFO - Main Ended Successfully

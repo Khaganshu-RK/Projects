@@ -48,13 +48,19 @@ This project is a machine learning pipeline for predicting car prices based on t
   - **backend/** and **frontend/** directories for API and UI respectively.
   - Frontend API routes are demonstrated in [Web/frontend/app/api/getColumns/route.ts](Cars_Sales_ML_Regression_Project/Web/frontend/app/api/getColumns/route.ts).
 
+### Prerequisites
+
+- **Python 3.12+**
+- **Node.js** and **npm** (for the frontend)
+- **Docker** and **Docker Compose** (for the web service)
+
 ## Installation
 
 1. **Clone the Repository**
 
    ```sh
-   git clone https://github.com/yourusername/Cars_Sales_ML_Regression_Project.git
-   cd Cars_Sales_ML_Regression_Project
+   git clone https://github.com/Khaganshu-RK/Projects.git
+   cd Projects
    ```
 
 2. **Set Up Python Environment**  
@@ -103,14 +109,18 @@ To deploy the web interface for model serving:
 1. Navigate to the **Web** directory:
 
    ```sh
-   cd Web
+   cd Cars_Sales_ML_Regression_Project/Web
    ```
 
 2. Start the Docker containers:
+
    ```sh
    docker-compose up --build
    ```
-   The backend API and frontend UI will be built and served. Refer to [Web/compose.yaml](Cars_Sales_ML_Regression_Project/Web/compose.yaml) for configuration details.
+
+   The frontend (Next.js) and backend (FastAPI) services will start, with the frontend accessible at [http://localhost:3000](http://localhost:3000) and the backend at [http://localhost:8000](http://localhost:8000).
+
+   The backend API and frontend UI will be built and served. Refer to [Cars_Sales_ML_Regression_Project/Web/compose.yaml](Cars_Sales_ML_Regression_Project/Web/compose.yaml) for configuration details.
 
 ## Pipeline Components Details
 
@@ -121,7 +131,7 @@ To deploy the web interface for model serving:
   The [DataValidation](Cars_Sales_ML_Regression_Project/src/components/data_validation.py) class uses a YAML schema ([Schema/data_schema.yaml](Cars_Sales_ML_Regression_Project/Schema/data_schema.yaml)) to validate the ingested data.
 
 - **Data Transformation & Model Training**  
-  Configurations for data transformation and model training are defined in [config_entity.py](Cars_Sales_ML_Regression_Project/src/extra/config_entity.py). Artifacts generated during this phase are captured in [artifact_entity.py](Cars_Sales_ML_Regression_Project/src/extra/artifact_entity.py).
+  Configurations for data transformation and model training are defined in [config_entity.py](Cars_Sales_ML_Regression_Project/src/extra/config_entity.py). Artifacts generated during this phase are captured in [artifact_entity.py](Cars_Sales_ML_Regression_Project/Artifacts/).
 
 - **Model Evaluation**  
   The [ModelEvaluation](Cars_Sales_ML_Regression_Project/src/components/model_evaluation.py) class evaluates the trained model using regression metrics like R2 score and, for classification, metrics such as accuracy, precision, recall, and f1 score depending on the pipeline stage.
@@ -129,17 +139,8 @@ To deploy the web interface for model serving:
 - **Utilities**  
   File I/O operations such as reading CSVs, numpy arrays, YAML files, and pickling objects are defined in [main_utils.py](Cars_Sales_ML_Regression_Project/src/utils/main_utils.py).
 
-## Contributing
-
-Feel free to fork this repository and submit pull requests. For major changes, please open an issue to discuss the proposed modifications.
-
-## License
-
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for more details.
-
 ## Acknowledgements
 
 - Thank you to all contributors and open-source projects that made this work possible.
-- Special thanks to the teams behind the libraries used in this project.
 
 Happy Coding!

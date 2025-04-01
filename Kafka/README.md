@@ -17,7 +17,7 @@ Logs/
 
 ## Prerequisites
 
-- **Python 3.8+**
+- **Python 3.12+**
 - A running Kafka broker (local or remote). You can start Kafka using Docker or install it directly.
 - Install the `confluent_kafka` library:
   ```bash

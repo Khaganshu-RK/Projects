@@ -109,7 +109,9 @@ Classify body performance data into multiple categories by applying a full machi
 
 ## 5. Big Data Project
 
-**Purpose:**
+**Azure Big Data Pipeline**
+
+A scalable **big data pipeline** using **Azure Data Factory, ADLS Gen2, Databricks, Synapse, MongoDB, and PostgreSQL**. The project follows the **Medallion Architecture (Bronze → Silver → Gold)** to ingest data from **GitHub APIs & SQL**, process it with **PySpark in Databricks**, enrich it with **MongoDB**, and store analytics-ready data in **Azure Synapse as CETAS Parquet tables**. Ideal for **data science and analytics** workflows.
 
 ## 6. Kafka Project
 

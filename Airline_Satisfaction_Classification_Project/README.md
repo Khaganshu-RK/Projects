@@ -1,208 +1,151 @@
-# Big Data Project
+# Airline Satisfaction Classification Project
 
-The **Big Data Project** is a multi-component system that leverages Apache Airflow for orchestrating data pipelines and Apache Kafka for streaming data processes. This project was generated with Astronomer for Airflow deployments and includes sample Kafka producer/consumer scripts. It is designed to help you build, test, and deploy scalable data workflows.
+The Airline Satisfaction Classification Project is designed to predict customer satisfaction by analyzing airline data. This project incorporates a full machine learning pipeline including data ingestion, validation, transformation, model training, evaluation, and web-based deployment.
 
----
+## Overview
+
+This project:
+
+- **Processes Airline Data:** Reads raw data from CSV files and validates it against a defined YAML schema ([data_schema.yaml](Airline_Satisfaction_Classification_Project/Schema/data_schema.yaml)).
+- **Transforms Data:** Applies preprocessing to convert raw features into a format suitable for modeling using a pipeline defined in [`src/pipelines/pipeline.py`](Airline_Satisfaction_Classification_Project/src/pipelines/pipeline.py).
+- **Trains Models:** Supports both regression and classification models with hyperparameter tuning ([model_trainer.py](Airline_Satisfaction_Classification_Project/src/components/model_trainer.py)).
+- **Evaluates Models:** Generates performance reports based on various metrics using custom evaluation functions ([model_evaluation.py](Airline_Satisfaction_Classification_Project/src/components/model_evaluation.py)).
+- **Deploys a Web Interface:** Provides a Dockerized web frontend and a FastAPI backend to handle predictions ([Web/compose.yaml](Airline_Satisfaction_Classification_Project/Web/compose.yaml)).
 
 ## Project Structure
 
 ```
-Big_Data_Project/
-├── Airflow/
-│   ├── .dockerignore
-│   ├── .env
-│   ├── .gitignore
-│   ├── airflow_settings.yaml              # Configure local Airflow connections, variables, and pools
-│   ├── docker-com.yml                     # Docker Compose configuration for Airflow
-│   ├── Dockerfile                         # Astro Runtime Docker image definition
-│   ├── packages.txt                       # OS-level package requirements
-│   ├── README.md                          # Airflow project documentation (see below)
-│   ├── requirements.txt                   # Python package requirements for Airflow
-│   ├── .astro/                            # Astronomer configuration files
-│   │   ├── config.yaml
-│   │   ├── dag_integrity_exceptions.txt
-│   │   └── test_dag_integrity_default.py
-│   ├── dags/                              # Airflow DAG definitions
-│   │   ├── .airflowignore
-│   │   ├── data_pipeline.py
-│   │   └── __pycache__/
-│   │         └── data_pipeline.cpython-312.pyc
-│   ├── data/                              # Sample CSV file for data ingestion
-│   │   └── data.csv
-│   ├── include/                           # Additional SQL queries or files to include
-│   │   └── SQL_Query.sql
-│   ├── models/                            # ML or data models (if applicable)
-│   ├── plugins/                           # Custom or third-party Airflow plugins
-│   └── tests/                             # Unit tests for your DAGs
-│         └── dags/
-│                 └── test_dag_example.py
-└── Kafka/
-    ├── consumer.py                        # Kafka consumer script
-    ├── producer.py                        # Kafka producer script
-    └── data/
-          └── all-scripts.csv              # Sample data used by Kafka processes
+Airline_Satisfaction_Classification_Project/
+│
+├── Artifacts/                  # Output artifacts (models, reports, etc.)
+├── Data/                       # Raw and cleaned data files (e.g., Airline_Data.csv)
+├── Logs/                       # Execution logs
+├── Notebooks/                  # Jupyter notebooks for EDA
+├── Schema/                     # Schema definitions for data validation ([data_schema.yaml](Airline_Satisfaction_Classification_Project/Schema/data_schema.yaml))
+├── src/                        # Core source code:
+│   ├── components/             # Modules for data ingestion, transformation, validation, model training, etc.
+│   │   ├── data_ingestion.py   # Handles reading and splitting the raw data ([data_ingestion.py](Airline_Satisfaction_Classification_Project/src/components/data_ingestion.py))
+│   │   ├── data_validation.py  # Validates input datasets ([data_validation.py](Airline_Satisfaction_Classification_Project/src/components/data_validation.py))
+│   │   ├── data_transformation.py  # Preprocesses data and encodes target variable ([data_transformation.py](Airline_Satisfaction_Classification_Project/src/components/data_transformation.py))
+│   │   ├── model_trainer.py    # Trains various models and tunes hyperparameters ([model_trainer.py](Airline_Satisfaction_Classification_Project/src/components/model_trainer.py))
+│   │   └── model_evaluation.py # Evaluates the trained models ([model_evaluation.py](Airline_Satisfaction_Classification_Project/src/components/model_evaluation.py))
+│   ├── extra/                  # Configuration and artifact entity definitions ([config_entity.py](Airline_Satisfaction_Classification_Project/src/extra/config_entity.py))
+│   ├── pipelines/              # End-to-end pipeline integration ([pipeline.py](Airline_Satisfaction_Classification_Project/src/pipelines/pipeline.py))
+│   └── utils/                  # Utility functions for file I/O, cloud operations, etc. ([main_utils.py](Airline_Satisfaction_Classification_Project/src/utils/main_utils.py))
+│
+├── Web/                        # Dockerized web deployment:
+│   ├── backend/                # FastAPI based backend for prediction ([server.py](Airline_Satisfaction_Classification_Project/Web/backend/app/server.py))
+│   └── frontend/               # Next.js based frontend for user interactions
+│       └── app/
+│           └── form/           # A sample form for input to the prediction API ([page.tsx](Airline_Satisfaction_Classification_Project/Web/frontend/app/form/page.tsx))
+│
+├── exceptions.py               # Custom exception classes ([exceptions.py](Airline_Satisfaction_Classification_Project/exceptions.py))
+├── logger.py                   # Logger configuration for runtime logging ([logger.py](Airline_Satisfaction_Classification_Project/logger.py))
+└── main.py                     # Entry point which orchestrates the pipeline process ([main.py](Airline_Satisfaction_Classification_Project/main.py))
 ```
 
----
+## Artifacts Structure
 
-## Getting Started
+```
+Artifacts/
+├── run_datetime/
+│   ├── 01_Data_Ingestion/
+│   │   ├── feature_store/
+│   │   │   └── raw_Data.csv
+│   │   └── ingested/
+│   │       ├── test.csv
+│   │       └── train.csv
+│   ├── 02_Data_Validation/
+│   │   ├── drift_report/
+│   │   │   └── drift_report.yaml
+│   │   └── validated/
+│   │       ├── train.csv
+│   |       └── test.csv
+│   ├── 03_Data_Transformation/
+│   │   |── transformed/
+│   │   |    ├── test.npy
+│   │   |    └── train.npy
+│   |   └── transformed_object/
+│   |        |── input_preprocessor.pkl
+│   |        └── target_encoder.pkl
+│   ├── 04_Model_Training/
+│   │   ├── final_model/
+│   │   │   └── model.pkl
+│   │   └── models_report/
+│   │       └── models_report.yaml
+```
 
-### Prerequisites
+## Prerequisites
 
-- **Docker** and **Docker Compose** – Required for running Airflow via Astronomer.
-- **Python 3.8+** – To run Airflow and utility scripts.
-- (Optional) **Kafka** – To run and test streaming workflows. You can install Kafka locally or use a cloud provider.
+- **Python 3.12+**
+- **Node.js** and **npm** (for the frontend)
+- **Docker** and **Docker Compose** (for the web service)
 
-### Installation
+## Installation
 
 1. **Clone the Repository**
 
    ```sh
-   git clone https://github.com/yourusername/Big_Data_Project.git
-   cd Big_Data_Project
+   git clone https://github.com/Khaganshu-RK/Projects.git
+   cd Projects
    ```
 
-2. **Set Up Airflow Environment**
+2. **Set Up Python Environment**
 
-   Navigate to the `Airflow` directory:
-
-   ```sh
-   cd Airflow
-   ```
-
-   Install the required Python packages:
+   Create a virtual environment and activate it:
 
    ```sh
+   python -m venv venv
+   source venv/bin/activate  # or venv\Scripts\activate on Windows
    pip install -r requirements.txt
    ```
 
-3. **Set Up Kafka Environment**
+3. **Install Frontend Dependencies (Optional)**
 
-   Ensure you have a running Kafka instance. If you need Kafka on your local machine, consider using Docker:
-
-   ```sh
-   docker run -d --name zookeeper -p 2181:2181 zookeeper:3.7
-   docker run -d --name kafka -p 9092:9092 --link zookeeper:zookeeper wurstmeister/kafka
-   ```
-
----
-
-## Airflow Usage
-
-### Running Airflow Locally (Astronomer)
-
-This project uses the Astronomer CLI to simplify the deployment and management of your Airflow environment.
-
-1. **Start Airflow**
-
-   In the `Airflow` directory, launch Airflow using:
+   If you need to run or modify the web frontend:
 
    ```sh
-   astro dev start
+   cd Airline_Satisfaction_Classification_Project/Web/frontend
+   npm install
    ```
 
-   This will spin up 4 Docker containers for:
+## Usage
 
-   - **Postgres:** Airflow's Metadata Database (port 5432)
-   - **Webserver:** The Airflow UI (port 8080)
-   - **Scheduler:** Triggers task execution
-   - **Triggerer:** Handles deferred tasks
+### Running the Pipeline
 
-2. **Verify Containers**
-
-   Confirm that the containers are running:
-
-   ```sh
-   docker ps
-   ```
-
-3. **Access the Airflow UI**
-
-   Open your browser and navigate to [http://localhost:8080](http://localhost:8080). Log in with:
-
-   - **Username:** admin
-   - **Password:** admin
-
-4. **Local Data Pipeline**
-
-   The DAG defined in `dags/data_pipeline.py` demonstrates a sample ETL pipeline. Modify or add new DAGs in this directory as needed.
-
-### Additional Airflow Configuration
-
-- **airflow_settings.yaml:**  
-  Use this file to pre-configure connections, variables, and pool settings for local development.
-
-- **include Directory:**  
-  Place any supplementary SQL files or data needed across your DAGs here.
-
-- **Tests:**  
-  Execute tests from the `tests/dags` directory to ensure your DAGs behave as expected.
-
----
-
-## Kafka Usage
-
-The Kafka component provides simple scripts to produce and consume messages, enabling you to test streaming data workflows.
-
-### Running the Producer
-
-From the root of the project or within the `Kafka` directory, run:
+Run the complete training and evaluation pipeline by executing:
 
 ```sh
-python Kafka/producer.py
+python main.py
 ```
 
-This will read from the sample data (`Kafka/data/all-scripts.csv`) and send messages to your Kafka broker.
+This script:
 
-### Running the Consumer
+- Performs data ingestion via [`src/components/data_ingestion.py`](Airline_Satisfaction_Classification_Project/src/components/data_ingestion.py).
+- Validates and transforms data using modules in [`src/components/data_validation.py`](Airline_Satisfaction_Classification_Project/src/components/data_validation.py) and [`src/components/data_transformation.py`](Airline_Satisfaction_Classification_Project/src/components/data_transformation.py).
+- Trains and evaluates models via [`src/components/model_trainer.py`](Airline_Satisfaction_Classification_Project/src/components/model_trainer.py) and [`src/components/model_evaluation.py`](Airline_Satisfaction_Classification_Project/src/components/model_evaluation.py).
+- Uploads/downloads required files from an S3 bucket via [`src/utils/cloud_utils.py`](Airline_Satisfaction_Classification_Project/src/utils/cloud_utils.py).
 
-Similarly, run the consumer with:
+### Web Deployment
 
-```sh
-python Kafka/consumer.py
-```
+To deploy the web interface:
 
-The consumer will listen for messages from the Kafka broker and process them accordingly.
+1. **Navigate to the Web Directory**
 
----
+   ```sh
+   cd Airline_Satisfaction_Classification_Project/Web
+   ```
 
-## Deployment
+2. **Start Docker Containers**
 
-### Local Deployment
+   ```sh
+   docker-compose up --build
+   ```
 
-- **Airflow:**  
-  Deploy your Airflow project locally as described above using `astro dev start`.
-
-- **Kafka:**  
-  Ensure your Kafka instance is running (as detailed in the Kafka installation) or use a managed Kafka service.
-
-### Deployment to Astronomer
-
-If you have an Astronomer account, you can deploy your Airflow project to Astronomer. For detailed deployment instructions, refer to the [Astronomer documentation](https://www.astronomer.io/docs/astro/deploy-code/).
-
----
-
-## Contributing
-
-Contributions are welcome! Follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a branch for your feature or bug fix.
-3. Commit your changes with meaningful commit messages.
-4. Open a pull request with a brief description of your changes.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
+   The frontend (Next.js) and backend (FastAPI) services will start, with the frontend accessible at [http://localhost:3000](http://localhost:3000) and the backend at [http://localhost:8000](http://localhost:8000).
 
 ## Acknowledgements
 
-- **Astronomer & Apache Airflow:** For orchestrating complex workflows.
-- **Apache Kafka:** For robust real-time data streaming.
-- Thanks to the open-source community for their contributions.
+- Thanks to the developers behind Python, FastAPI, Next.js, Docker, and the open-source community for providing the tools that make this project possible.
 
 Happy Coding!

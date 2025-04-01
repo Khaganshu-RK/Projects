@@ -35,12 +35,18 @@ This project implements a Convolutional Neural Network (CNN) for classifying fac
   - **frontend/**  
     Frontend code for the user interface.
 
+## Prerequisites
+
+- **Python 3.12+**
+- **Node.js** and **npm** (for the frontend)
+- **Docker** and **Docker Compose** (for the web service)
+
 ## Installation
 
 1. **Clone the Repository**
    ```sh
-   git clone https://github.com/yourusername/CNN_Project.git
-   cd CNN_Project
+   git clone https://github.com/Khaganshu-RK/Projects.git
+   cd Projects
    ```
 2. **Set Up Python Environment**  
    It is recommended to use a virtual environment.
@@ -78,13 +84,13 @@ If you wish to deploy the web service:
 
 1. Navigate to the `Web` directory:
    ```sh
-   cd Web
+   cd CNN_Project/Web
    ```
 2. Start the web service using Docker Compose:
    ```sh
    docker-compose up --build
    ```
-   This will build and start the backend and frontend services. You can access the web interface at [http://localhost:YOUR_PORT](http://localhost:YOUR_PORT) (replace `YOUR_PORT` with the configured port in `compose.yaml`).
+   The frontend (Next.js) and backend (FastAPI) services will start, with the frontend accessible at [http://localhost:3000](http://localhost:3000) and the backend at [http://localhost:8000](http://localhost:8000).
 
 ## Data Preparation
 
@@ -102,14 +108,6 @@ If you wish to deploy the web service:
 
 - Environment variables: For any configuration (e.g., file paths, hyperparameters), use environment variables or configuration files as necessary.
 - Logging: Logging is configured in `project.py` and outputs to `project.log`.
-
-## Contributing
-
-Feel free to fork this repository and submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 

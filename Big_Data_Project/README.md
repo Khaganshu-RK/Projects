@@ -1,208 +1,114 @@
-# Big Data Project
+# **Azure Big Data Pipeline - README**
 
-The **Big Data Project** is a multi-component system that leverages Apache Airflow for orchestrating data pipelines and Apache Kafka for streaming data processes. This project was generated with Astronomer for Airflow deployments and includes sample Kafka producer/consumer scripts. It is designed to help you build, test, and deploy scalable data workflows.
+## **📌 Project Overview**
 
----
-
-## Project Structure
-
-```
-Big_Data_Project/
-├── Airflow/
-│   ├── .dockerignore
-│   ├── .env
-│   ├── .gitignore
-│   ├── airflow_settings.yaml              # Configure local Airflow connections, variables, and pools
-│   ├── docker-com.yml                     # Docker Compose configuration for Airflow
-│   ├── Dockerfile                         # Astro Runtime Docker image definition
-│   ├── packages.txt                       # OS-level package requirements
-│   ├── README.md                          # Airflow project documentation (see below)
-│   ├── requirements.txt                   # Python package requirements for Airflow
-│   ├── .astro/                            # Astronomer configuration files
-│   │   ├── config.yaml
-│   │   ├── dag_integrity_exceptions.txt
-│   │   └── test_dag_integrity_default.py
-│   ├── dags/                              # Airflow DAG definitions
-│   │   ├── .airflowignore
-│   │   ├── data_pipeline.py
-│   │   └── __pycache__/
-│   │         └── data_pipeline.cpython-312.pyc
-│   ├── data/                              # Sample CSV file for data ingestion
-│   │   └── data.csv
-│   ├── include/                           # Additional SQL queries or files to include
-│   │   └── SQL_Query.sql
-│   ├── models/                            # ML or data models (if applicable)
-│   ├── plugins/                           # Custom or third-party Airflow plugins
-│   └── tests/                             # Unit tests for your DAGs
-│         └── dags/
-│                 └── test_dag_example.py
-└── Kafka/
-    ├── consumer.py                        # Kafka consumer script
-    ├── producer.py                        # Kafka producer script
-    └── data/
-          └── all-scripts.csv              # Sample data used by Kafka processes
-```
+This project implements a **big data pipeline** using **Azure Data Factory, ADLS Gen2, Databricks, Synapse, MongoDB, PostgreSQL, and HTTPS API**. The pipeline follows the **Medallion Architecture** (Bronze → Silver → Gold) for efficient data processing and analytics.
 
 ---
 
-## Getting Started
+## **📁 Project Architecture**
 
-### Prerequisites
+1. **Data Ingestion (Bronze Layer - Raw Data Storage)**
 
-- **Docker** and **Docker Compose** – Required for running Airflow via Astronomer.
-- **Python 3.8+** – To run Airflow and utility scripts.
-- (Optional) **Kafka** – To run and test streaming workflows. You can install Kafka locally or use a cloud provider.
+   - Data sources:
+     - **GitHub API / HTTPS Endpoint** (for raw JSON data)
+     - **SQL Data (PostgreSQL)** (structured data)
+   - Tools Used: **Azure Data Factory (ADF), ADLS Gen2**
+   - Process:
+     - Used **`ForEach` activity** in ADF to fetch multiple files from GitHub API.
+     - Used **Copy Activity** in ADF to extract SQL data and store it as CSV.
+     - Stored raw data in **ADLS Gen2 - Bronze folder**.
 
-### Installation
+2. **Data Processing (Silver Layer - Enriched Data)**
 
-1. **Clone the Repository**
+   - Tools Used: **Azure Databricks (PySpark), MongoDB**
+   - Process:
+     - Read data from **ADLS Gen2 - Bronze folder**.
+     - Cleaned and transformed data using **PySpark in Databricks**.
+     - Fetched **additional enriched data from MongoDB** in Databricks.
+     - Combined and transformed data.
+     - Stored the cleaned and structured data in **ADLS Gen2 - Silver folder (Parquet format)**.
 
-   ```sh
-   git clone https://github.com/yourusername/Big_Data_Project.git
-   cd Big_Data_Project
-   ```
-
-2. **Set Up Airflow Environment**
-
-   Navigate to the `Airflow` directory:
-
-   ```sh
-   cd Airflow
-   ```
-
-   Install the required Python packages:
-
-   ```sh
-   pip install -r requirements.txt
-   ```
-
-3. **Set Up Kafka Environment**
-
-   Ensure you have a running Kafka instance. If you need Kafka on your local machine, consider using Docker:
-
-   ```sh
-   docker run -d --name zookeeper -p 2181:2181 zookeeper:3.7
-   docker run -d --name kafka -p 9092:9092 --link zookeeper:zookeeper wurstmeister/kafka
-   ```
+3. **Data Aggregation & Analytics (Gold Layer - Analytics Ready Data)**
+   - Tools Used: **Azure Synapse Analytics**
+   - Process:
+     - Synapse ingested the **Silver-layer data from ADLS Gen2**.
+     - Performed **further transformations & aggregations**.
+     - Stored the final analytics-ready dataset in **ADLS Gen2 - Gold folder** as **CETAS Parquet tables**.
+     - Data Science & Data Analysts can now query the Gold-layer data efficiently.
 
 ---
 
-## Airflow Usage
+## **⚙️ Technologies Used**
 
-### Running Airflow Locally (Astronomer)
-
-This project uses the Astronomer CLI to simplify the deployment and management of your Airflow environment.
-
-1. **Start Airflow**
-
-   In the `Airflow` directory, launch Airflow using:
-
-   ```sh
-   astro dev start
-   ```
-
-   This will spin up 4 Docker containers for:
-
-   - **Postgres:** Airflow's Metadata Database (port 5432)
-   - **Webserver:** The Airflow UI (port 8080)
-   - **Scheduler:** Triggers task execution
-   - **Triggerer:** Handles deferred tasks
-
-2. **Verify Containers**
-
-   Confirm that the containers are running:
-
-   ```sh
-   docker ps
-   ```
-
-3. **Access the Airflow UI**
-
-   Open your browser and navigate to [http://localhost:8080](http://localhost:8080). Log in with:
-
-   - **Username:** admin
-   - **Password:** admin
-
-4. **Local Data Pipeline**
-
-   The DAG defined in `dags/data_pipeline.py` demonstrates a sample ETL pipeline. Modify or add new DAGs in this directory as needed.
-
-### Additional Airflow Configuration
-
-- **airflow_settings.yaml:**  
-  Use this file to pre-configure connections, variables, and pool settings for local development.
-
-- **include Directory:**  
-  Place any supplementary SQL files or data needed across your DAGs here.
-
-- **Tests:**  
-  Execute tests from the `tests/dags` directory to ensure your DAGs behave as expected.
+| Tool/Technology                         | Purpose                                  |
+| --------------------------------------- | ---------------------------------------- |
+| **Azure Data Factory (ADF)**            | Data ingestion from APIs and SQL         |
+| **Azure Data Lake Storage (ADLS Gen2)** | Storage following Medallion architecture |
+| **Azure Databricks (PySpark)**          | Data transformation and enrichment       |
+| **MongoDB**                             | Additional data source for enrichment    |
+| **PostgreSQL**                          | Structured data source                   |
+| **Azure Synapse Analytics**             | Data transformation & analytics          |
+| **Parquet Format (CETAS)**              | Optimized data storage                   |
 
 ---
 
-## Kafka Usage
+## **🛠️ Steps to Reproduce**
 
-The Kafka component provides simple scripts to produce and consume messages, enabling you to test streaming data workflows.
+### **Step 1: Data Ingestion**
 
-### Running the Producer
+1. **Create an Azure Data Factory Pipeline**:
+   - Use **ForEach** loop to fetch data from **GitHub API**.
+   - Use **Copy Activity** to extract data from **PostgreSQL**.
+   - Store raw data in **ADLS Gen2 - Bronze Layer**.
 
-From the root of the project or within the `Kafka` directory, run:
+### **Step 2: Data Processing & Enrichment**
 
-```sh
-python Kafka/producer.py
-```
+2. **Use Databricks (PySpark) for transformation**:
+   - Read raw data from **Bronze folder**.
+   - Clean & transform data using **PySpark**.
+   - Fetch **enriched data from MongoDB**.
+   - Merge all datasets and store in **ADLS Gen2 - Silver Layer (Parquet Format)**.
 
-This will read from the sample data (`Kafka/data/all-scripts.csv`) and send messages to your Kafka broker.
+### **Step 3: Data Aggregation & Storage**
 
-### Running the Consumer
-
-Similarly, run the consumer with:
-
-```sh
-python Kafka/consumer.py
-```
-
-The consumer will listen for messages from the Kafka broker and process them accordingly.
-
----
-
-## Deployment
-
-### Local Deployment
-
-- **Airflow:**  
-  Deploy your Airflow project locally as described above using `astro dev start`.
-
-- **Kafka:**  
-  Ensure your Kafka instance is running (as detailed in the Kafka installation) or use a managed Kafka service.
-
-### Deployment to Astronomer
-
-If you have an Astronomer account, you can deploy your Airflow project to Astronomer. For detailed deployment instructions, refer to the [Astronomer documentation](https://www.astronomer.io/docs/astro/deploy-code/).
+3. **Use Azure Synapse Analytics for final processing**:
+   - Read Silver data from **ADLS Gen2**.
+   - Perform additional transformations & aggregations.
+   - Store results in **ADLS Gen2 - Gold Layer (CETAS Parquet Format)**.
+   - Data Analysts & Scientists use this optimized data for analysis.
 
 ---
 
-## Contributing
+## **📊 Medallion Architecture in This Project**
 
-Contributions are welcome! Follow these steps to contribute:
-
-1. Fork the repository.
-2. Create a branch for your feature or bug fix.
-3. Commit your changes with meaningful commit messages.
-4. Open a pull request with a brief description of your changes.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+| Layer      | Storage                   | Purpose                                      |
+| ---------- | ------------------------- | -------------------------------------------- |
+| **Bronze** | ADLS Gen2 (Raw Data)      | Stores raw, unprocessed data from APIs & SQL |
+| **Silver** | ADLS Gen2 (Parquet)       | Cleaned, transformed, and enriched data      |
+| **Gold**   | ADLS Gen2 (CETAS Parquet) | Aggregated & analytics-ready data            |
 
 ---
 
-## Acknowledgements
+## **💡 Key Takeaways**
 
-- **Astronomer & Apache Airflow:** For orchestrating complex workflows.
-- **Apache Kafka:** For robust real-time data streaming.
-- Thanks to the open-source community for their contributions.
+**Scalable Data Pipeline** using Azure services.  
+**Efficient Storage** using ADLS Gen2 with Parquet format.  
+**Seamless Data Integration** with multiple sources (API, SQL, MongoDB).  
+**Performance Optimization** using Synapse & CETAS for analytical workloads.
 
-Happy Coding!
+---
+
+## **📌 Future Enhancements**
+
+- Automate Synapse queries using **Azure Logic Apps / Azure Functions**.
+- Implement **Data Quality Checks** in Databricks.
+- Enable **Real-time Processing** using Event Hub & Streaming Analytics.
+
+---
+
+## **📩 Contact & Support**
+
+For any queries or suggestions, feel free to reach out!
+
+---

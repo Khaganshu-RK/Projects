@@ -1,12 +1,12 @@
 # **Azure Big Data Pipeline - README**
 
-## **📌 Project Overview**
+## Project Overview
 
 This project implements a **big data pipeline** using **Azure Data Factory, ADLS Gen2, Databricks, Synapse, MongoDB, PostgreSQL, and HTTPS API**. The pipeline follows the **Medallion Architecture** (Bronze → Silver → Gold) for efficient data processing and analytics.
 
 ---
 
-## **📁 Project Architecture**
+## Project Architecture
 
 1. **Data Ingestion (Bronze Layer - Raw Data Storage)**
 
@@ -39,7 +39,7 @@ This project implements a **big data pipeline** using **Azure Data Factory, ADLS
 
 ---
 
-## **⚙️ Technologies Used**
+## Technologies Used
 
 | Tool/Technology                         | Purpose                                  |
 | --------------------------------------- | ---------------------------------------- |
@@ -53,7 +53,7 @@ This project implements a **big data pipeline** using **Azure Data Factory, ADLS
 
 ---
 
-## **🛠️ Steps to Reproduce**
+## Steps to Reproduce
 
 ### **Step 1: Data Ingestion**
 
@@ -80,7 +80,7 @@ This project implements a **big data pipeline** using **Azure Data Factory, ADLS
 
 ---
 
-## **📊 Medallion Architecture in This Project**
+## Medallion Architecture in This Project
 
 | Layer      | Storage                   | Purpose                                      |
 | ---------- | ------------------------- | -------------------------------------------- |
@@ -90,7 +90,7 @@ This project implements a **big data pipeline** using **Azure Data Factory, ADLS
 
 ---
 
-## **💡 Key Takeaways**
+## Key Takeaways
 
 **Scalable Data Pipeline** using Azure services.  
 **Efficient Storage** using ADLS Gen2 with Parquet format.  
@@ -99,16 +99,10 @@ This project implements a **big data pipeline** using **Azure Data Factory, ADLS
 
 ---
 
-## **📌 Future Enhancements**
+## Future Enhancements
 
 - Automate Synapse queries using **Azure Logic Apps / Azure Functions**.
 - Implement **Data Quality Checks** in Databricks.
 - Enable **Real-time Processing** using Event Hub & Streaming Analytics.
-
----
-
-## **📩 Contact & Support**
-
-For any queries or suggestions, feel free to reach out!
 
 ---

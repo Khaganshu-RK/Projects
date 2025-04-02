@@ -49,7 +49,7 @@ docker run -d --name kafka -p 9092:9092 --link zookeeper:zookeeper wurstmeister/
 Publish messages from the CSV file to Kafka:
 
 ```bash
-python producer.py
+python Kafka/producer.py
 ```
 
 The producer reads `data/all-scripts.csv` line by line and sends each message to the configured Kafka topic. Check `Logs/producer.log` for publish status.
@@ -59,7 +59,7 @@ The producer reads `data/all-scripts.csv` line by line and sends each message to
 Consume messages from Kafka:
 
 ```bash
-python consumer.py
+python Kafka/consumer.py
 ```
 
 The consumer subscribes to the specified Kafka topic, processes incoming messages, and logs the events to `Logs/consumer.log`.

@@ -1,6 +1,7 @@
 # Repository Projects Overview
 
 This repository contains multiple self-contained projects demonstrating different aspects of machine learning, deep learning, data engineering, and web deployment. Below is a detailed overview of each project, outlining its purpose, key components, and overall structure.
+Also using Git Large File Storage (GLFS) to store large datasets.
 
 ---
 

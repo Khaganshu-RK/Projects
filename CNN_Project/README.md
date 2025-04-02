@@ -2,6 +2,8 @@
 
 This project implements a Convolutional Neural Network (CNN) for classifying faces using the UTKFace dataset. The model is trained to predict attributes such as age, gender, and ethnicity based on facial images. In addition, the project includes a web interface for deployment and visualization.
 
+Note: The Model accuracy is not very high. We need more epochs to train the model and more hyperparameters to improve the accuracy.
+
 ## Project Structure
 
 - **project.py**  
@@ -67,7 +69,7 @@ This project implements a Convolutional Neural Network (CNN) for classifying fac
 Execute the model script to perform training, evaluation, or inference:
 
 ```sh
-python project.py
+python CNN_Project/project.py
 ```
 
 ### Viewing Logs
@@ -75,7 +77,7 @@ python project.py
 Check the `project.log` file for detailed logs:
 
 ```sh
-tail -f project.log
+tail -f CNN_Project/project.log
 ```
 
 ### Web Interface

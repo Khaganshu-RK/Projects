@@ -116,7 +116,7 @@ Artifacts/
 Run the complete training and evaluation pipeline by executing:
 
 ```sh
-python main.py
+python Airline_Satisfaction_Classification_Project/main.py
 ```
 
 This script:

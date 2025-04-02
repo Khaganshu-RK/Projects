@@ -2,6 +2,8 @@
 
 The **Body Performance Multi-Classification Project** is a machine learning pipeline that processes (We are ingesting data from postgresql and mongoDB.) and classifies body performance data. It includes data ingestion, cleaning, transformation, model training, evaluation, and a web-based interface for visualization and predictions.
 
+Note: I am using Binary Classification for this project. Model accuracy is very less as expected. We need to use MLP/Simple ANN for this project (For correctly predicting the mutiple classes of data).
+
 ## Project Structure
 
 ```
@@ -90,13 +92,13 @@ The main pipeline, which handles data processing, model training, and evaluation
 To run the complete pipeline:
 
 ```sh
-python main.py
+python Body_Performance_multi_Classification_Project/main.py
 ```
 
 If you need to upload new data into the databases (postgresql and mongoDB), use the `upload_data.py` script:
 
 ```sh
-python upload_data.py
+python Body_Performance_multi_Classification_Project/upload_data.py
 ```
 
 ### Working with Data
@@ -110,7 +112,7 @@ python upload_data.py
 For exploratory data analysis, open the Jupyter Notebook:
 
 ```sh
-jupyter notebook bodyPerformance_multi_Classification_Project/Notebooks/EDA.ipynb
+jupyter notebook Body_Performance_multi_Classification_Project/Notebooks/EDA.ipynb
 ```
 
 ### Running the Web Service

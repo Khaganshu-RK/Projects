@@ -72,4 +72,4 @@ tests/               # Unit tests for DAGs and other components
 - **Logging:**  
   Monitor Airflow logs via the web UI and container log outputs for debugging and performance analysis.
 
-Happy Coding with Astronomer and Airflow!
+Happy Coding!

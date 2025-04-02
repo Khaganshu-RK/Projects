@@ -83,7 +83,7 @@ This project is a machine learning pipeline for predicting car prices based on t
 Run the main script to execute the entire pipeline:
 
 ```sh
-python main.py
+python Cars_Sales_ML_Regression_Project/main.py
 ```
 
 This script will:
@@ -99,7 +99,7 @@ This script will:
 Logs are saved in the [Logs](Cars_Sales_ML_Regression_Project/Logs) directory. For real-time monitoring, you can execute:
 
 ```sh
-tail -f Logs/log_<timestamp>.log
+tail -f Cars_Sales_ML_Regression_Project/Logs/log_<timestamp>.log
 ```
 
 ### Web Deployment

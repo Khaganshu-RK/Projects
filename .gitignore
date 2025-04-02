@@ -180,7 +180,7 @@ cython_debug/
 catboost_info/
 CNN_Project/data/
 # Data/
-*.npy
-*.csv
-*.h5
-*.pkl
+# *.npy
+# *.csv
+# *.h5
+# *.pkl

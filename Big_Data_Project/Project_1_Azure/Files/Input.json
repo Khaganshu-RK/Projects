@@ -1,32 +1,30 @@
-{	
-	"value": [
-		{
-		"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/customers.csv",
-		"file_name":"customers.csv"
-		},
-		{
-		"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/geolocation.csv",
-		"file_name":"geolocation.csv"
-		},
-		{
-		"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/order_items.csv",
-		"file_name":"order_items.csv"
-		},
-		{
-		"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/order_reviews.csv",
-		"file_name":"order_reviews.csv"
-		},
-		{
-		"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/orders.csv",
-		"file_name":"orders.csv"
-		},
-		{
-		"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/products.csv",
-		"file_name":"products.csv"
-		},
-		{
-		"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/sellers.csv",
-		"file_name":"sellers.csv"
-		}
-	]
-}
+[
+	{
+	"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/customers.csv",
+	"file_name":"customers.csv"
+	},
+	{
+	"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/geolocation.csv",
+	"file_name":"geolocation.csv"
+	},
+	{
+	"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/order_items.csv",
+	"file_name":"order_items.csv"
+	},
+	{
+	"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/order_reviews.csv",
+	"file_name":"order_reviews.csv"
+	},
+	{
+	"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/orders.csv",
+	"file_name":"orders.csv"
+	},
+	{
+	"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/products.csv",
+	"file_name":"products.csv"
+	},
+	{
+	"csv_relative_url": "refs/heads/main/Big_Data_Project/Project_1_Azure/Data/sellers.csv",
+	"file_name":"sellers.csv"
+	}
+]

@@ -25,3 +25,13 @@ kafka-python
 confluent-kafka
 apache-airflow-providers-postgres
 psycopg2
+langchain
+langchain_community
+langchain_huggingface
+chromadb
+python-dotenv
+transformers
+sentence-transformers
+streamlit
+pypdf
+langchain_groq
